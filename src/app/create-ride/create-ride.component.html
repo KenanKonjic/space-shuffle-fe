@@ -1,43 +1,35 @@
 <app-header></app-header>
 <div class="container">
-<h1 class="header-text">Offer a Ride</h1>
-<form #createRideForm="ngForm" (submit)="submitForm" (ngSubmit)="onSubmit(createRideForm)">
+  <h1 class="header-text">Offer a Ride</h1>
+  <form #createRideForm="ngForm" (submit)="submitForm" (ngSubmit)="onSubmit(createRideForm)">
 
-  <div class="form-field">
-    <mat-form-field>
-      <mat-label>From</mat-label>
-      <mat-select name="from" [(ngModel)]="from" [disableOptionCentering]="true" required>
-        <mat-option *ngFor="let location of locations" [value]="location">{{location}}</mat-option>
-      </mat-select>
-    </mat-form-field>
-  </div>
+    <div class="form-field">
+      <mat-form-field>
+        <mat-label>From</mat-label>
+        <mat-select name="from" [(ngModel)]="from" [disableOptionCentering]="true" required>
+          <mat-option *ngFor="let location of locations" [value]="location">{{location}}</mat-option>
+        </mat-select>
+      </mat-form-field>
+    </div>
 
-  <div class="form-field">
-    <mat-form-field>
-      <mat-label>To</mat-label>
-      <mat-select name="to" [(ngModel)]="to" disableOptionCentering formControlName="from" required>
-        <mat-option *ngFor="let location of locations" [value]="location">{{location}}</mat-option>
-      </mat-select>
-    </mat-form-field>
-  </div>
+    <div class="form-field">
+      <mat-form-field>
+        <mat-label>To</mat-label>
+        <mat-select name="to" [(ngModel)]="to" disableOptionCentering formControlName="from" required>
+          <mat-option *ngFor="let location of locations" [value]="location">{{location}}</mat-option>
+        </mat-select>
+      </mat-form-field>
+    </div>
 
-  <div class="form-field">
-    <mat-form-field>
-      <mat-label>Date and Time</mat-label>
-      <input matInput [matDatepicker]="picker" name="datetime" [(ngModel)]="datetime" required>
-      <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
-      <mat-datepicker #picker></mat-datepicker>
-    </mat-form-field>
-  </div>
+    <div class="form-field">
+      <mat-form-field>
+        <mat-label>Date and Time</mat-label>
+        <input matInput [matDatepicker]="picker" name="datetime" [(ngModel)]="datetime" required>
+        <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+        <mat-datepicker #picker></mat-datepicker>
+      </mat-form-field>
+    </div>
 
-
-
- <!-- <label for="date">Date:</label>
-  <input type="date" name="date" id="date" required><br>
-
-  <label for="time">Time:</label>
-  <input type="time" name="time" id="time" required><br> -->
-
-  <button type="submit" mat-raised-button>Create Ride</button>
-</form>
+    <button type="submit" mat-raised-button>Create Ride</button>
+  </form>
 </div>
