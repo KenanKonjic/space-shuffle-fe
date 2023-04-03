@@ -15,13 +15,16 @@ import {MatDatepickerModule} from "@angular/material/datepicker";
 import {MatNativeDateModule} from "@angular/material/core";
 import { HeaderComponent } from './header/header.component';
 import {MatToolbarModule} from "@angular/material/toolbar";
+import { LoginComponent } from './login/login.component';
+import {UserService} from "./services/user.service";
 
 @NgModule({
   declarations: [
     AppComponent,
     CreateRideComponent,
     HomeComponent,
-    HeaderComponent
+    HeaderComponent,
+    LoginComponent
   ],
   imports: [
     BrowserModule,
@@ -38,7 +41,7 @@ import {MatToolbarModule} from "@angular/material/toolbar";
     MatNativeDateModule,
     MatToolbarModule
   ],
-  providers: [],
+  providers: [UserService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
