@@ -15,8 +15,10 @@ import {MatDatepickerModule} from "@angular/material/datepicker";
 import {MatNativeDateModule} from "@angular/material/core";
 import { HeaderComponent } from './header/header.component';
 import {MatToolbarModule} from "@angular/material/toolbar";
-import { LoginComponent } from './login/login.component';
-import {UserService} from "./services/user.service";
+import { ChooseRideComponent } from './choose-ride/choose-ride.component';
+import {MatRadioModule} from '@angular/material/radio';
+import {MatTableModule} from "@angular/material/table";
+import {MatIconModule} from "@angular/material/icon";
 
 @NgModule({
   declarations: [
@@ -24,7 +26,7 @@ import {UserService} from "./services/user.service";
     CreateRideComponent,
     HomeComponent,
     HeaderComponent,
-    LoginComponent
+    ChooseRideComponent
   ],
   imports: [
     BrowserModule,
@@ -39,9 +41,12 @@ import {UserService} from "./services/user.service";
     ReactiveFormsModule,
     MatDatepickerModule,
     MatNativeDateModule,
-    MatToolbarModule
+    MatToolbarModule,
+    MatRadioModule,
+    MatTableModule,
+    MatIconModule
   ],
-  providers: [UserService],
+  providers: [],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
