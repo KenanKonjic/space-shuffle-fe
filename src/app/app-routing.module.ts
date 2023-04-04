@@ -21,6 +21,11 @@ const routes: Routes = [
   },
 
   {
+
+    path: 'choose-ride',
+    component: ChooseRideComponent,
+  }
+
     path: 'login',
     component: LoginComponent
   },
