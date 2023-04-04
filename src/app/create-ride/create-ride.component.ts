@@ -24,44 +24,12 @@ export class CreateRideComponent {
 
   submitForm() {
     this.router.navigate(['home']);
-   }
+  }
 
   createRide() {
     if (!this.from || !this.to || !this.datetime) {
       console.log('Please fill in all fields!');
       return;
     }
-
-
-// export class CreateRideComponent {
-//  /* from: string = '';
-//   to: string = '';
-//   date: string = '';
-//   time: string = '';
-//   seats: number = 1;*/
-//
-//
-//   points: Point[] = [
-//     {value: 'otoka', viewValue: 'Otoka'},
-//     {value: 'cvila', viewValue: 'Cengic Vila'},
-//     {value: 'nedzarici', viewValue: 'Nedzarici'},
-//   ];
-//
-//  /* points: string[] = [
-//     'Ciglane',
-//     'Otoka',
-//     'Cengic Vila',
-//     'Dolac Malta',
-//     'Alipasino Polje',
-//     'Nedzarici',
-//     'Stup',
-//   ]; */
-//
-//   constructor(private router:Router) {}
-//
-//   submitForm() {
-//     this.router.navigate(['home']);
-//   }
   }
 }
-
