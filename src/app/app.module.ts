@@ -34,6 +34,7 @@ import { ChooseRoleComponent } from './choose-role/choose-role.component';
 @NgModule({
   declarations: [
     AppComponent,
+    CreateRideComponent,
     HomeComponent,
     AdminPanelComponent,
     SidenavComponent,
