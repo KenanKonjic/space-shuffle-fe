@@ -20,6 +20,7 @@ const routes: Routes = [
   {
     path: 'admin-panel',
     component: AdminPanelComponent
+  },
 
   {
     path: 'choose-ride',
