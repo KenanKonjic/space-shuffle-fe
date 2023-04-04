@@ -16,9 +16,10 @@ import {MatNativeDateModule} from "@angular/material/core";
 import { HeaderComponent } from './header/header.component';
 import {MatToolbarModule} from "@angular/material/toolbar";
 import { ChooseRideComponent } from './choose-ride/choose-ride.component';
-import {MatRadioModule} from '@angular/material/radio';
 import {MatTableModule} from "@angular/material/table";
 import {MatIconModule} from "@angular/material/icon";
+import { LoginComponent } from './login/login.component';
+import {UserService} from "./services/user.service";
 
 @NgModule({
   declarations: [
@@ -27,6 +28,7 @@ import {MatIconModule} from "@angular/material/icon";
     HomeComponent,
     HeaderComponent,
     ChooseRideComponent
+    LoginComponent
   ],
   imports: [
     BrowserModule,
@@ -42,11 +44,11 @@ import {MatIconModule} from "@angular/material/icon";
     MatDatepickerModule,
     MatNativeDateModule,
     MatToolbarModule,
-    MatRadioModule,
     MatTableModule,
     MatIconModule
+    MatToolbarModule
   ],
-  providers: [],
+  providers: [UserService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
