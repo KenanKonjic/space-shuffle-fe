@@ -15,13 +15,27 @@ import {MatDatepickerModule} from "@angular/material/datepicker";
 import {MatNativeDateModule} from "@angular/material/core";
 import { HeaderComponent } from './header/header.component';
 import {MatToolbarModule} from "@angular/material/toolbar";
+import { AdminPanelComponent } from './admin-panel/admin-panel.component';
+import { SidenavComponent } from './admin-panel/sidenav/sidenav.component';
+import { DashboardComponent } from './admin-panel/dashboard/dashboard.component';
+import { StatisticsComponent } from './admin-panel/statistics/statistics.component';
+import { UsersComponent } from './admin-panel/users/users.component';
+import { RidesComponent } from './admin-panel/rides/rides.component';
+import { HistoryComponent } from './admin-panel/history/history.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     CreateRideComponent,
     HomeComponent,
-    HeaderComponent
+    HeaderComponent,
+    AdminPanelComponent,
+    SidenavComponent,
+    DashboardComponent,
+    StatisticsComponent,
+    UsersComponent,
+    RidesComponent,
+    HistoryComponent
   ],
   imports: [
     BrowserModule,
