@@ -16,6 +16,7 @@ import {MatNativeDateModule} from "@angular/material/core";
 import { HeaderComponent } from './header/header.component';
 import {MatToolbarModule} from "@angular/material/toolbar";
 import { LoginComponent } from './login/login.component';
+import { SignupComponent } from './signup/signup.component';
 import {UserService} from "./services/user.service";
 
 @NgModule({
@@ -24,7 +25,8 @@ import {UserService} from "./services/user.service";
     CreateRideComponent,
     HomeComponent,
     HeaderComponent,
-    LoginComponent
+    LoginComponent,
+    SignupComponent
   ],
   imports: [
     BrowserModule,
