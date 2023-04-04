@@ -14,16 +14,16 @@ const routes: Routes = [
     path: 'home',
     component: HomeComponent
   },
-  {
 
+  {
     path: 'choose-ride',
     component: ChooseRideComponent,
-  }
+  },
 
+    {
     path: 'login',
     component: LoginComponent
   },
-
 ];
 
 @NgModule({
