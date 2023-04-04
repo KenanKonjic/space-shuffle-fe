@@ -15,6 +15,9 @@ import {MatDatepickerModule} from "@angular/material/datepicker";
 import {MatNativeDateModule} from "@angular/material/core";
 import { HeaderComponent } from './header/header.component';
 import {MatToolbarModule} from "@angular/material/toolbar";
+import {MatTableModule} from "@angular/material/table";
+import {MatIconModule} from "@angular/material/icon";
+import { ChooseRideComponent } from './choose-ride/choose-ride.component';
 import { ChooseRideComponent } from './choose-ride/choose-ride.component';
 import {MatTableModule} from "@angular/material/table";
 import {MatIconModule} from "@angular/material/icon";
@@ -30,6 +33,10 @@ import {UserService} from "./services/user.service";
     HeaderComponent,
     SignupComponent,
     ChooseRideComponent,
+    ChooseRideComponent,
+    HeaderComponent,
+    HeaderComponent,
+    ChooseRideComponent,
     LoginComponent
   ],
   imports: [
@@ -42,6 +49,8 @@ import {UserService} from "./services/user.service";
     BrowserAnimationsModule,
     NoopAnimationsModule,
     FormsModule,
+    MatTableModule,
+    MatIconModule,
     ReactiveFormsModule,
     MatDatepickerModule,
     MatNativeDateModule,
@@ -53,4 +62,4 @@ import {UserService} from "./services/user.service";
   providers: [UserService],
   bootstrap: [AppComponent]
 })
-export class AppModule { }
+export class AppModule{ }
