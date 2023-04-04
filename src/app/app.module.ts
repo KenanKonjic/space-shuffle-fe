@@ -15,10 +15,9 @@ import {MatDatepickerModule} from "@angular/material/datepicker";
 import {MatNativeDateModule} from "@angular/material/core";
 import { HeaderComponent } from './header/header.component';
 import {MatToolbarModule} from "@angular/material/toolbar";
-import { ChooseRideComponent } from './choose-ride/choose-ride.component';
-import {MatRadioModule} from '@angular/material/radio';
 import {MatTableModule} from "@angular/material/table";
 import {MatIconModule} from "@angular/material/icon";
+import { ChooseRideComponent } from './choose-ride/choose-ride.component';
 import { LoginComponent } from './login/login.component';
 import {UserService} from "./services/user.service";
 
@@ -46,10 +45,7 @@ import {UserService} from "./services/user.service";
     ReactiveFormsModule,
     MatDatepickerModule,
     MatNativeDateModule,
-    MatToolbarModule,
-    MatRadioModule,
-    MatTableModule,
-    MatIconModule
+    MatToolbarModule
   ],
   providers: [UserService],
   bootstrap: [AppComponent]
