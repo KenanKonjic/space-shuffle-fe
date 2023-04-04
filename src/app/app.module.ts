@@ -19,6 +19,8 @@ import { ChooseRideComponent } from './choose-ride/choose-ride.component';
 import {MatRadioModule} from '@angular/material/radio';
 import {MatTableModule} from "@angular/material/table";
 import {MatIconModule} from "@angular/material/icon";
+import { LoginComponent } from './login/login.component';
+import {UserService} from "./services/user.service";
 
 @NgModule({
   declarations: [
@@ -26,7 +28,10 @@ import {MatIconModule} from "@angular/material/icon";
     CreateRideComponent,
     HomeComponent,
     HeaderComponent,
-    ChooseRideComponent
+    ChooseRideComponent,
+    HeaderComponent,
+    HeaderComponent,
+    LoginComponent
   ],
   imports: [
     BrowserModule,
@@ -46,7 +51,7 @@ import {MatIconModule} from "@angular/material/icon";
     MatTableModule,
     MatIconModule
   ],
-  providers: [],
+  providers: [UserService],
   bootstrap: [AppComponent]
 })
-export class AppModule { }
+export class AppModule{ }

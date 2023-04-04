@@ -22,3 +22,5 @@ export class ChooseRideComponent implements OnInit {
     this.router.navigate(['home']);
   }
 }
+
+
