@@ -42,6 +42,8 @@ import {UserService} from "./services/user.service";
     BrowserAnimationsModule,
     NoopAnimationsModule,
     FormsModule,
+    MatTableModule,
+    MatIconModule,
     ReactiveFormsModule,
     MatDatepickerModule,
     MatNativeDateModule,
