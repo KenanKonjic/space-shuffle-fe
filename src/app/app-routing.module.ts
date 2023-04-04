@@ -20,16 +20,6 @@ const routes: Routes = [
     component: ChooseRideComponent,
   },
 
-  {
-
-    path: 'choose-ride',
-    component: ChooseRideComponent,
-  }
-
-    path: 'login',
-    component: LoginComponent
-  },
-
     {
     path: 'login',
     component: LoginComponent
