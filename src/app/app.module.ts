@@ -22,20 +22,31 @@ import { StatisticsComponent } from './admin-panel/statistics/statistics.compone
 import { UsersComponent } from './admin-panel/users/users.component';
 import { RidesComponent } from './admin-panel/rides/rides.component';
 import { HistoryComponent } from './admin-panel/history/history.component';
+import {MatTableModule} from "@angular/material/table";
+import {MatIconModule} from "@angular/material/icon";
+import { ChooseRideComponent } from './choose-ride/choose-ride.component';
+import { LoginComponent } from './login/login.component';
+import { SignupComponent } from './signup/signup.component';
+import {UserService} from "./services/user.service";
+import {NgOptimizedImage} from "@angular/common";
+import { ChooseRoleComponent } from './choose-role/choose-role.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    CreateRideComponent,
     HomeComponent,
-    HeaderComponent,
     AdminPanelComponent,
     SidenavComponent,
     DashboardComponent,
     StatisticsComponent,
     UsersComponent,
     RidesComponent,
-    HistoryComponent
+    HistoryComponent,
+    SignupComponent,
+    HeaderComponent,
+    ChooseRideComponent,
+    LoginComponent,
+    ChooseRoleComponent
   ],
   imports: [
     BrowserModule,
@@ -47,12 +58,17 @@ import { HistoryComponent } from './admin-panel/history/history.component';
     BrowserAnimationsModule,
     NoopAnimationsModule,
     FormsModule,
+    MatTableModule,
+    MatIconModule,
     ReactiveFormsModule,
     MatDatepickerModule,
     MatNativeDateModule,
+    MatToolbarModule,
+    MatTableModule,
+    MatIconModule,
     MatToolbarModule
   ],
-  providers: [],
+  providers: [UserService],
   bootstrap: [AppComponent]
 })
-export class AppModule { }
+export class AppModule{ }
