@@ -15,6 +15,9 @@ import {MatDatepickerModule} from "@angular/material/datepicker";
 import {MatNativeDateModule} from "@angular/material/core";
 import { HeaderComponent } from './header/header.component';
 import {MatToolbarModule} from "@angular/material/toolbar";
+import { ChooseRideComponent } from './choose-ride/choose-ride.component';
+import {MatTableModule} from "@angular/material/table";
+import {MatIconModule} from "@angular/material/icon";
 import { LoginComponent } from './login/login.component';
 import { SignupComponent } from './signup/signup.component';
 import {UserService} from "./services/user.service";
@@ -25,8 +28,9 @@ import {UserService} from "./services/user.service";
     CreateRideComponent,
     HomeComponent,
     HeaderComponent,
-    LoginComponent,
-    SignupComponent
+    SignupComponent,
+    ChooseRideComponent,
+    LoginComponent
   ],
   imports: [
     BrowserModule,
@@ -41,6 +45,9 @@ import {UserService} from "./services/user.service";
     ReactiveFormsModule,
     MatDatepickerModule,
     MatNativeDateModule,
+    MatToolbarModule,
+    MatTableModule,
+    MatIconModule
     MatToolbarModule
   ],
   providers: [UserService],
