@@ -22,6 +22,7 @@ import { ChooseRideComponent } from './choose-ride/choose-ride.component';
 import {MatTableModule} from "@angular/material/table";
 import {MatIconModule} from "@angular/material/icon";
 import { LoginComponent } from './login/login.component';
+import { SignupComponent } from './signup/signup.component';
 import {UserService} from "./services/user.service";
 
 @NgModule({
@@ -30,10 +31,12 @@ import {UserService} from "./services/user.service";
     CreateRideComponent,
     HomeComponent,
     HeaderComponent,
+    SignupComponent,
+    ChooseRideComponent,
     ChooseRideComponent,
     HeaderComponent,
     HeaderComponent,
-    ChooseRideComponent
+    ChooseRideComponent,
     LoginComponent
   ],
   imports: [
