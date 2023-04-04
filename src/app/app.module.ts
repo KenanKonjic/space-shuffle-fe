@@ -18,13 +18,11 @@ import {MatToolbarModule} from "@angular/material/toolbar";
 import {MatTableModule} from "@angular/material/table";
 import {MatIconModule} from "@angular/material/icon";
 import { ChooseRideComponent } from './choose-ride/choose-ride.component';
-import { ChooseRideComponent } from './choose-ride/choose-ride.component';
-import {MatTableModule} from "@angular/material/table";
-import {MatIconModule} from "@angular/material/icon";
 import { LoginComponent } from './login/login.component';
 import { SignupComponent } from './signup/signup.component';
 import {UserService} from "./services/user.service";
 import {NgOptimizedImage} from "@angular/common";
+import { ChooseRoleComponent } from './choose-role/choose-role.component';
 
 @NgModule({
   declarations: [
@@ -38,7 +36,8 @@ import {NgOptimizedImage} from "@angular/common";
     HeaderComponent,
     HeaderComponent,
     ChooseRideComponent,
-    LoginComponent
+    LoginComponent,
+    ChooseRoleComponent
   ],
   imports: [
     BrowserModule,
@@ -57,7 +56,7 @@ import {NgOptimizedImage} from "@angular/common";
     MatNativeDateModule,
     MatToolbarModule,
     MatTableModule,
-    MatIconModule
+    MatIconModule,
     MatToolbarModule
   ],
   providers: [UserService],
