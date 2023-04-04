@@ -24,6 +24,7 @@ import {MatIconModule} from "@angular/material/icon";
 import { LoginComponent } from './login/login.component';
 import { SignupComponent } from './signup/signup.component';
 import {UserService} from "./services/user.service";
+import {NgOptimizedImage} from "@angular/common";
 
 @NgModule({
   declarations: [
