@@ -30,6 +30,7 @@ import { SignupComponent } from './signup/signup.component';
 import {UserService} from "./services/user.service";
 import {NgOptimizedImage} from "@angular/common";
 import { ChooseRoleComponent } from './choose-role/choose-role.component';
+import { BodyComponent } from './admin-panel/body/body.component';
 
 @NgModule({
   declarations: [
@@ -51,7 +52,8 @@ import { ChooseRoleComponent } from './choose-role/choose-role.component';
     HeaderComponent,
     ChooseRideComponent,
     LoginComponent,
-    ChooseRoleComponent
+    ChooseRoleComponent,
+    BodyComponent
   ],
   imports: [
     BrowserModule,

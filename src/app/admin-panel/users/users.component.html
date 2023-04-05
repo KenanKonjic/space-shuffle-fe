@@ -1,1 +1,42 @@
-<p>users works!</p>
+<app-header></app-header>
+
+<app-sidenav (onToggleSideNav)="onToggleSideNav($event)"></app-sidenav>
+<link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css"
+      integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous" />
+
+<div class="users">
+  <h1>Users Overview</h1>
+  <mat-table [dataSource]="rides" class="mat-elevation-z8">
+
+    <ng-container matColumnDef="id">
+      <mat-header-cell *matHeaderCellDef>Ride ID</mat-header-cell>
+      <mat-cell *matCellDef="let ride">{{ride.id}}</mat-cell>
+    </ng-container>
+
+    <ng-container matColumnDef="driverName">
+      <mat-header-cell *matHeaderCellDef>Driver Name</mat-header-cell>
+      <mat-cell *matCellDef="let ride">{{ride.driverName}}</mat-cell>
+    </ng-container>
+
+    <ng-container matColumnDef="startingLocation">
+      <mat-header-cell *matHeaderCellDef>Starting Location</mat-header-cell>
+      <mat-cell *matCellDef="let ride">{{ride.startingLocation}}</mat-cell>
+    </ng-container>
+
+    <ng-container matColumnDef="availableSeats">
+      <mat-header-cell *matHeaderCellDef>Available Seats</mat-header-cell>
+      <mat-cell *matCellDef="let ride">{{ride.availableSeats}}</mat-cell>
+    </ng-container>
+
+
+    <ng-container matColumnDef="actions">
+      <mat-header-cell *matHeaderCellDef>Actions</mat-header-cell>
+      <mat-cell *matCellDef="let ride">
+        <button mat-raised-button color="primary" (click)="selectRide(ride)">Select Ride</button>
+      </mat-cell>
+    </ng-container>
+
+    <mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row>
+    <mat-row *matRowDef="let row; columns: displayedColumns;"></mat-row>
+  </mat-table>
+</div>

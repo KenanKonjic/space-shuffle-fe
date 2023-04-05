@@ -7,6 +7,10 @@ import {ChooseRideComponent} from "./choose-ride/choose-ride.component";
 import {LoginComponent} from "./login/login.component";
 import {SignupComponent} from "./signup/signup.component";
 import {ChooseRoleComponent} from "./choose-role/choose-role.component";
+import {DashboardComponent} from "./admin-panel/dashboard/dashboard.component";
+import {RidesComponent} from "./admin-panel/rides/rides.component";
+import {UsersComponent} from "./admin-panel/users/users.component";
+import {StatisticsComponent} from "./admin-panel/statistics/statistics.component";
 
 const routes: Routes = [
   {
@@ -19,7 +23,7 @@ const routes: Routes = [
   },
   {
     path: 'admin-panel',
-    component: AdminPanelComponent
+    component: DashboardComponent
   },
 
   {
@@ -39,6 +43,28 @@ const routes: Routes = [
     path: 'choose-role',
     component: ChooseRoleComponent
   },
+  {
+    path:'',
+    redirectTo:'dashboard',
+    pathMatch:'full',
+  },
+  {
+    path:'dashboard',
+    component:DashboardComponent
+  },
+  {
+    path:'rides',
+    component:RidesComponent
+  },
+  {
+    path:'users',
+    component:UsersComponent
+  },
+  {
+    path:'statistics',
+    component:StatisticsComponent
+  }
+
 ];
 
 @NgModule({
