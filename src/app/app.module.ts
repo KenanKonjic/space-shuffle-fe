@@ -16,10 +16,13 @@ import {MatNativeDateModule} from "@angular/material/core";
 import { HeaderComponent } from './header/header.component';
 import {MatToolbarModule} from "@angular/material/toolbar";
 import { ChooseRideComponent } from './choose-ride/choose-ride.component';
-import {MatTableModule} from "@angular/material/table";
 import { LoginComponent } from './login/login.component';
 import {UserService} from "./services/user.service";
+import {MatTableModule} from "@angular/material/table";
 import {MatIconModule} from "@angular/material/icon";
+import { SignupComponent } from './signup/signup.component';
+import {NgOptimizedImage} from "@angular/common";
+import { ChooseRoleComponent } from './choose-role/choose-role.component';
 
 @NgModule({
   declarations: [
@@ -27,8 +30,10 @@ import {MatIconModule} from "@angular/material/icon";
     CreateRideComponent,
     HomeComponent,
     HeaderComponent,
-    ChooseRideComponent,
     LoginComponent,
+    SignupComponent,
+    ChooseRideComponent,
+    ChooseRoleComponent,
   ],
   imports: [
     BrowserModule,

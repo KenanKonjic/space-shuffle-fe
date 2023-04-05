@@ -4,6 +4,8 @@ import {CreateRideComponent} from "./create-ride/create-ride.component";
 import {HomeComponent} from "./home/home.component";
 import {ChooseRideComponent} from "./choose-ride/choose-ride.component";
 import {LoginComponent} from "./login/login.component";
+import {SignupComponent} from "./signup/signup.component";
+import {ChooseRoleComponent} from "./choose-role/choose-role.component";
 
 const routes: Routes = [
   {
@@ -23,6 +25,16 @@ const routes: Routes = [
   {
     path: 'login',
     component: LoginComponent
+  },
+
+  {
+    path: 'signup',
+    component: SignupComponent
+  },
+
+  {
+    path: 'choose-role',
+    component: ChooseRoleComponent
   },
 ];
 

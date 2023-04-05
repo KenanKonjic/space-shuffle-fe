@@ -3,22 +3,23 @@ import {ActivatedRoute, Router} from "@angular/router";
 import {FormBuilder} from "@angular/forms";
 
 @Component({
-  selector: 'app-home',
-  templateUrl: './home.component.html',
-  styleUrls: ['./home.component.css']
+  selector: 'app-choose-role',
+  templateUrl: './choose-role.component.html',
+  styleUrls: ['./choose-role.component.css']
 })
-export class HomeComponent {
+export class ChooseRoleComponent {
+
   constructor(private router: Router, private formBuilder: FormBuilder, private route: ActivatedRoute){}
 
-  navigateToLogin(): void{
+  navigateToChoose(): void{
     this.router.navigate([
-      'login'
+      'choose-ride'
     ])
 
   }
-  navigateToSignup(): void{
+  navigateToCreate(): void{
     this.router.navigate([
-      'signup'
+      'create-ride'
     ])
   }
 }
