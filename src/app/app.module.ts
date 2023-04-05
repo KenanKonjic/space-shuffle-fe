@@ -15,23 +15,25 @@ import {MatDatepickerModule} from "@angular/material/datepicker";
 import {MatNativeDateModule} from "@angular/material/core";
 import { HeaderComponent } from './header/header.component';
 import {MatToolbarModule} from "@angular/material/toolbar";
-import { ChooseRideComponent } from './choose-ride/choose-ride.component';
-import {MatRadioModule} from '@angular/material/radio';
-import {MatTableModule} from "@angular/material/table";
-import {MatIconModule} from "@angular/material/icon";
 import { LoginComponent } from './login/login.component';
 import {UserService} from "./services/user.service";
+import { ChooseRideComponent } from './choose-ride/choose-ride.component';
+import {MatTableModule} from "@angular/material/table";
+import {MatIconModule} from "@angular/material/icon";
+import { SignupComponent } from './signup/signup.component';
+import {NgOptimizedImage} from "@angular/common";
+import { ChooseRoleComponent } from './choose-role/choose-role.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     CreateRideComponent,
     HomeComponent,
+    LoginComponent,
     HeaderComponent,
-    ChooseRideComponent
-    HeaderComponent
-    HeaderComponent,
-    LoginComponent
+    SignupComponent,
+    ChooseRideComponent,
+    ChooseRoleComponent,
   ],
   imports: [
     BrowserModule,
@@ -43,15 +45,14 @@ import {UserService} from "./services/user.service";
     BrowserAnimationsModule,
     NoopAnimationsModule,
     FormsModule,
+    MatTableModule,
+    MatIconModule,
     ReactiveFormsModule,
     MatDatepickerModule,
     MatNativeDateModule,
     MatToolbarModule,
-    MatRadioModule,
-    MatTableModule,
-    MatIconModule
   ],
   providers: [UserService],
   bootstrap: [AppComponent]
 })
-export class AppModule { }
+export class AppModule{ }
