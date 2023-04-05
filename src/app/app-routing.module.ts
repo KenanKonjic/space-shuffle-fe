@@ -22,14 +22,16 @@ const routes: Routes = [
     component: ChooseRideComponent,
   },
 
-    {
+  {
     path: 'login',
     component: LoginComponent
   },
+
   {
     path: 'signup',
     component: SignupComponent
   },
+
   {
     path: 'choose-role',
     component: ChooseRoleComponent
