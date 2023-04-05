@@ -19,6 +19,7 @@ import { ChooseRideComponent } from './choose-ride/choose-ride.component';
 import {MatTableModule} from "@angular/material/table";
 import { LoginComponent } from './login/login.component';
 import {UserService} from "./services/user.service";
+import {MatIconModule} from "@angular/material/icon";
 
 @NgModule({
   declarations: [
