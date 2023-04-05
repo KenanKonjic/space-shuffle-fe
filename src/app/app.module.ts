@@ -15,12 +15,8 @@ import {MatDatepickerModule} from "@angular/material/datepicker";
 import {MatNativeDateModule} from "@angular/material/core";
 import { HeaderComponent } from './header/header.component';
 import {MatToolbarModule} from "@angular/material/toolbar";
-import {MatTableModule} from "@angular/material/table";
-import {MatIconModule} from "@angular/material/icon";
-import { ChooseRideComponent } from './choose-ride/choose-ride.component';
 import { ChooseRideComponent } from './choose-ride/choose-ride.component';
 import {MatTableModule} from "@angular/material/table";
-import {MatIconModule} from "@angular/material/icon";
 import { LoginComponent } from './login/login.component';
 import {UserService} from "./services/user.service";
 
@@ -31,10 +27,7 @@ import {UserService} from "./services/user.service";
     HomeComponent,
     HeaderComponent,
     ChooseRideComponent,
-    HeaderComponent,
-    HeaderComponent,
-    ChooseRideComponent
-    LoginComponent
+    LoginComponent,
   ],
   imports: [
     BrowserModule,
@@ -52,9 +45,6 @@ import {UserService} from "./services/user.service";
     MatDatepickerModule,
     MatNativeDateModule,
     MatToolbarModule,
-    MatTableModule,
-    MatIconModule
-    MatToolbarModule
   ],
   providers: [UserService],
   bootstrap: [AppComponent]

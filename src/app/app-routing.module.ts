@@ -20,7 +20,7 @@ const routes: Routes = [
     component: ChooseRideComponent,
   },
 
-    {
+  {
     path: 'login',
     component: LoginComponent
   },
