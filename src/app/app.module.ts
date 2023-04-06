@@ -22,12 +22,12 @@ import { StatisticsComponent } from './admin-panel/statistics/statistics.compone
 import { UsersComponent } from './admin-panel/users/users.component';
 import { RidesComponent } from './admin-panel/rides/rides.component';
 import { HistoryComponent } from './admin-panel/history/history.component';
-import {MatTableModule} from "@angular/material/table";
-import {MatIconModule} from "@angular/material/icon";
 import { ChooseRideComponent } from './choose-ride/choose-ride.component';
 import { LoginComponent } from './login/login.component';
-import { SignupComponent } from './signup/signup.component';
 import {UserService} from "./services/user.service";
+import {MatTableModule} from "@angular/material/table";
+import {MatIconModule} from "@angular/material/icon";
+import { SignupComponent } from './signup/signup.component';
 import {NgOptimizedImage} from "@angular/common";
 import { ChooseRoleComponent } from './choose-role/choose-role.component';
 import { BodyComponent } from './admin-panel/body/body.component';
@@ -45,13 +45,9 @@ import { BodyComponent } from './admin-panel/body/body.component';
     RidesComponent,
     HistoryComponent,
     HeaderComponent,
+    LoginComponent,
     SignupComponent,
     ChooseRideComponent,
-    ChooseRideComponent,
-    HeaderComponent,
-    HeaderComponent,
-    ChooseRideComponent,
-    LoginComponent,
     ChooseRoleComponent,
     BodyComponent
   ],
@@ -71,9 +67,6 @@ import { BodyComponent } from './admin-panel/body/body.component';
     MatDatepickerModule,
     MatNativeDateModule,
     MatToolbarModule,
-    MatTableModule,
-    MatIconModule,
-    MatToolbarModule
   ],
   providers: [UserService],
   bootstrap: [AppComponent]
