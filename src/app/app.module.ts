@@ -15,16 +15,13 @@ import {MatDatepickerModule} from "@angular/material/datepicker";
 import {MatNativeDateModule} from "@angular/material/core";
 import { HeaderComponent } from './header/header.component';
 import {MatToolbarModule} from "@angular/material/toolbar";
-import {MatTableModule} from "@angular/material/table";
-import {MatIconModule} from "@angular/material/icon";
-import { ChooseRideComponent } from './choose-ride/choose-ride.component';
-import { ChooseRideComponent } from './choose-ride/choose-ride.component';
-import {MatTableModule} from "@angular/material/table";
-import {MatIconModule} from "@angular/material/icon";
 import { LoginComponent } from './login/login.component';
 import { SignupComponent } from './signup/signup.component';
 import {UserService} from "./services/user.service";
 import {NgOptimizedImage} from "@angular/common";
+import {ChooseRideComponent} from "./choose-ride/choose-ride.component";
+import {MatTableModule} from "@angular/material/table";
+import {MatIconModule} from "@angular/material/icon";
 
 @NgModule({
   declarations: [
@@ -34,10 +31,8 @@ import {NgOptimizedImage} from "@angular/common";
     HeaderComponent,
     SignupComponent,
     ChooseRideComponent,
-    ChooseRideComponent,
     HeaderComponent,
     HeaderComponent,
-    ChooseRideComponent,
     LoginComponent
   ],
   imports: [
