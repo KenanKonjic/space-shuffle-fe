@@ -15,29 +15,41 @@ import {MatDatepickerModule} from "@angular/material/datepicker";
 import {MatNativeDateModule} from "@angular/material/core";
 import { HeaderComponent } from './header/header.component';
 import {MatToolbarModule} from "@angular/material/toolbar";
-import {MatTableModule} from "@angular/material/table";
-import {MatIconModule} from "@angular/material/icon";
+import { AdminPanelComponent } from './admin-panel/admin-panel.component';
+import { SidenavComponent } from './admin-panel/sidenav/sidenav.component';
+import { DashboardComponent } from './admin-panel/dashboard/dashboard.component';
+import { StatisticsComponent } from './admin-panel/statistics/statistics.component';
+import { UsersComponent } from './admin-panel/users/users.component';
+import { RidesComponent } from './admin-panel/rides/rides.component';
+import { HistoryComponent } from './admin-panel/history/history.component';
 import { ChooseRideComponent } from './choose-ride/choose-ride.component';
 import { LoginComponent } from './login/login.component';
-import { SignupComponent } from './signup/signup.component';
 import {UserService} from "./services/user.service";
+import {MatTableModule} from "@angular/material/table";
+import {MatIconModule} from "@angular/material/icon";
+import { SignupComponent } from './signup/signup.component';
 import {NgOptimizedImage} from "@angular/common";
 import { ChooseRoleComponent } from './choose-role/choose-role.component';
+import { BodyComponent } from './admin-panel/body/body.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     CreateRideComponent,
     HomeComponent,
+    AdminPanelComponent,
+    SidenavComponent,
+    DashboardComponent,
+    StatisticsComponent,
+    UsersComponent,
+    RidesComponent,
+    HistoryComponent,
     HeaderComponent,
+    LoginComponent,
     SignupComponent,
     ChooseRideComponent,
-    ChooseRideComponent,
-    HeaderComponent,
-    HeaderComponent,
-    ChooseRideComponent,
-    LoginComponent,
-    ChooseRoleComponent
+    ChooseRoleComponent,
+    BodyComponent
   ],
   imports: [
     BrowserModule,
@@ -55,9 +67,6 @@ import { ChooseRoleComponent } from './choose-role/choose-role.component';
     MatDatepickerModule,
     MatNativeDateModule,
     MatToolbarModule,
-    MatTableModule,
-    MatIconModule,
-    MatToolbarModule
   ],
   providers: [UserService],
   bootstrap: [AppComponent]
