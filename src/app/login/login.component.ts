@@ -34,4 +34,9 @@ export class LoginComponent implements OnInit {
       ''
     ])
   }
+  navigateToChooseRole(): void{
+    this.router.navigate([
+      'choose-role'
+    ])
+  }
 }
