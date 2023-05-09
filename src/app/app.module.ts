@@ -56,9 +56,6 @@ import {NgOptimizedImage} from "@angular/common";
     MatDatepickerModule,
     MatNativeDateModule,
     MatToolbarModule,
-    MatTableModule,
-    MatIconModule
-    MatToolbarModule
   ],
   providers: [UserService],
   bootstrap: [AppComponent]
