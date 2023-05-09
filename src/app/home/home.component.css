@@ -1,26 +1,37 @@
-body {
-  width: 100%;
-  height: 100%;
-  margin: auto;
-  background-color: #051247;
+body{
+  background-image: url('../../hpi.png');
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  width: 1366px;
+  height: 760px;
 }
 
-.container {
-  border: 3px solid #f1f1f1;
+form{
+  width: 600px;
+  padding: 55px;
+  background-color:#f7f6ee ;
+  border-radius: 5px;
+  border: 3px double midnightblue;
   left: 50%;
-  top: 50%;
-  margin-left: -11%;
+  top: 15%;
   position: absolute;
-  margin-top: -5%;
-  padding: 1% 5%;
-  font-family: OpenSymbol, sans-serif;
+  text-align: center;
+  height: fit-content;
+  display: inline;
+  margin: -5% auto 25px 10px;
 }
+
 
 button {
-  margin: 15px;
-  padding: 10px;
-  background-color: #051247;
+  background-color: midnightblue;
   color: white;
+  padding: 14px 20px;
+  margin: 8px 0;
+  border: 0.2px solid white;
+  border-radius: 4px;
+  cursor: pointer;
+  width: 50%;
 
 }
 
@@ -28,17 +39,39 @@ button:hover {
   opacity: 0.8;
 }
 
-.behind {
+/*.behind {
   background-color: #051247 ;
   padding: 8px;
   width: 23px;
   height: 44px;
 
-}
-.naslov{
-  font-family: OpenSymbol, sans-serif;
-  color: white;
-  margin-top: 5px;
-  margin-left: 2px;
+*/
+
+
+button.signup {
+  background-color: #fbfcf8;
+  color: #000000;
+  border: 0.2px solid cornflowerblue;
 }
 
+.logo{
+  height: 340px;
+  width: 340px;
+  align-items: center;
+}
+
+h1 {
+  text-align: center;
+  font-family: "Myanmar Text", serif;
+  font-size: 45px;
+  margin-bottom: -25px;
+  color: #051247;
+}
+
+h2{
+  text-align: center;
+  opacity: 0.7;
+  font-family: "Myanmar Text", serif;
+  background-color: rgb(247, 246, 238);
+  margin-bottom: -25px;
+}

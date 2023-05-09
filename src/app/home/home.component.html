@@ -6,22 +6,21 @@
   <meta name="author" content="Amra Isaković"/>
   <link rel="stylesheet" href="home.component.css">
 </head>
+<app-header></app-header>
 
 <body>
-<app-header></app-header>
-<div class="behind">
-  <h1 class="naslov"> SSST </h1>
-  <div class="container">
-    <h1>SpaceShuffle</h1>
+
+<form>
+
+    <h2>Welcome to </h2>
+    <h1>Space<i>Shuffle</i></h1>
+    <img class="logo" src="../../SpaceShuffleLogo.png"/>
 
     <button type="button" (click)="navigateToLogin()">Log in</button>
-    <button type="button" (click)="navigateToSignup()">Sign up</button>
+    <button type="button" (click)="navigateToSignup()" class="signup">Sign up</button>
 
-  </div>
-
-</div>
+</form>
 
 </body>
-
 
 </html>
