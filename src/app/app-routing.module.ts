@@ -10,7 +10,7 @@ const routes: Routes = [
     component: CreateRideComponent
   },
   {
-    path: 'home',
+    path: '',
     component: HomeComponent
   },
   {
