@@ -15,6 +15,7 @@ import {MatDatepickerModule} from "@angular/material/datepicker";
 import {MatNativeDateModule} from "@angular/material/core";
 import {HeaderComponent} from './header/header.component';
 import {MatToolbarModule} from "@angular/material/toolbar";
+import {NgOptimizedImage} from "@angular/common";
 import {AdminPanelComponent} from './admin-panel/admin-panel.component';
 import {SidenavComponent} from './admin-panel/sidenav/sidenav.component';
 import {DashboardComponent} from './admin-panel/dashboard/dashboard.component';

@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import {ActivatedRoute, Router} from "@angular/router";
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
-import { first } from 'rxjs/operators';
+
 
 
 @Component({
@@ -31,7 +31,7 @@ export class LoginComponent implements OnInit {
 
   navigateToHome(): void{
     this.router.navigate([
-      'home'
+      ''
     ])
   }
   navigateToChooseRole(): void{
