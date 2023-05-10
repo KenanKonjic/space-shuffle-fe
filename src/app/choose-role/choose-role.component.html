@@ -6,22 +6,24 @@
   <meta name="author" content="Amra Isaković"/>
   <link rel="stylesheet" href="choose-role.component.css">
 </head>
+
 <app-header></app-header>
+
 <body>
-<div class="behind">
-  <h1 class="naslov"> SSST </h1>
+
   <div class="container">
     <h1>What are you in the mood for today?</h1>
 
-    <button type="button" (click)="navigateToCreate()">Driver</button>
-    <button type="button" (click)="navigateToChoose()">Passenger</button>
+    <button class="driver" type="button" (click)="navigateToCreate()"></button>
+
+    <button class="passenger" type="button" (click)="navigateToChoose()"></button>
+    <div class="btn-names">
+      <h2 clas="driv">DRIVER</h2>
+      <h2 class="passr">PASSENGER</h2>
+    </div>
+
 
   </div>
-
-</div>
-
 </body>
-
-
 </html>
 
