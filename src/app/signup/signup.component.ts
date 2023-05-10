@@ -12,7 +12,7 @@ export class SignupComponent {
 
   navigateToHome(): void{
     this.router.navigate([
-      'home'
+      ''
     ])
   }
   navigateToChoose(): void{
