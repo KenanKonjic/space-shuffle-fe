@@ -6,19 +6,19 @@
   <meta name="author" content="Amra Isaković"/>
   <link rel="stylesheet" href="home.component.css">
 </head>
+
 <app-header></app-header>
 
 <body>
 
 <form>
-
+  <div class="kontent">
     <h2>Welcome to </h2>
-    <h1>Space<i>Shuffle</i></h1>
-    <img class="logo" src="../../SpaceShuffleLogo.png"/>
-
+    <p><span><b>Space</b></span><i>Shuffle</i></p>
+    <img src="assets/SpaceShuffleLogo.png" height=340px width=340px/>
     <button type="button" (click)="navigateToLogin()">Log in</button>
     <button type="button" (click)="navigateToSignup()" class="signup">Sign up</button>
-
+  </div>
 </form>
 
 </body>
