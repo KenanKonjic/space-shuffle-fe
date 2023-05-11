@@ -10,17 +10,20 @@ import {Router} from "@angular/router";
 })
 export class ChooseRideComponent implements OnInit {
   rides: Ride[] = [];
-  displayedColumns: string[] = ['id', 'driverName', 'startingLocation', 'endLocation', 'availableSeats', 'time', 'actions'];
+  displayedColumns: string[] = ['id', 'startingLocation', 'endLocation', 'availableSeats', 'time', 'actions'];
 
   constructor(private rideService: RideService, private router: Router) { }
 
   ngOnInit() {
-    this.rides = this.rideService.getRides();
+    this.rideService.getRides().subscribe((rides) => {
+      this.rides = rides;
+      console.log(rides);
+    });
   }
 
-  selectRide(ride: Ride) {
-    this.router.navigate(['home']);
-  }
+  // selectRide(ride: Ride) {
+  //   this.router.navigate(['home']);
+  // }
 }
 
 

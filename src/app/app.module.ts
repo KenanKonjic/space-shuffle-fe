@@ -30,6 +30,8 @@ import {MatTableModule} from "@angular/material/table";
 import {MatIconModule} from "@angular/material/icon";
 import {SignupComponent} from './signup/signup.component';
 import {ChooseRoleComponent} from './choose-role/choose-role.component';
+import {RideService} from "./services/ride.service";
+import {HttpClient, HttpClientModule} from "@angular/common/http";
 
 @NgModule({
   declarations: [
@@ -49,25 +51,28 @@ import {ChooseRoleComponent} from './choose-role/choose-role.component';
     ChooseRideComponent,
     ChooseRoleComponent,
   ],
-    imports: [
-        BrowserModule,
-        AppRoutingModule,
-        MatButtonModule,
-        MatFormFieldModule,
-        MatInputModule,
-        MatSelectModule,
-        BrowserAnimationsModule,
-        NoopAnimationsModule,
-        FormsModule,
-        MatTableModule,
-        MatIconModule,
-        ReactiveFormsModule,
-        MatDatepickerModule,
-        MatNativeDateModule,
-        MatToolbarModule,
-        NgOptimizedImage,
-    ],
-  providers: [UserService],
+  imports: [
+    BrowserModule,
+    AppRoutingModule,
+    MatButtonModule,
+    MatFormFieldModule,
+    MatInputModule,
+    MatSelectModule,
+    BrowserAnimationsModule,
+    NoopAnimationsModule,
+    FormsModule,
+    MatTableModule,
+    MatIconModule,
+    ReactiveFormsModule,
+    MatDatepickerModule,
+    MatNativeDateModule,
+    MatToolbarModule,
+    NgOptimizedImage,
+    HttpClientModule,
+
+
+  ],
+  providers: [UserService, RideService,  HttpClient],
   bootstrap: [AppComponent]
 })
 export class AppModule{ }

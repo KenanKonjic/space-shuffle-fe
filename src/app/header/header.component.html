@@ -3,8 +3,8 @@
   <span class="spacer"></span>
   <div>
     <button mat-button routerLink="/">Home</button>
-    <button mat-button routerLink="/create-ride">Create Ride</button>
-    <button mat-button routerLink="/choose-ride">Choose Ride</button>
+    <button mat-button (click)="create()">Create Ride</button>
+    <button mat-button (click)="choose()">Choose Ride</button>
     <button mat-button (click)="logout()">Logout</button>
   </div>
 </mat-toolbar>

@@ -17,9 +17,9 @@ export class UsersComponent {
 
   constructor(private rideService: RideService, private router: Router) { }
 
-  ngOnInit() {
-    this.rides = this.rideService.getRides();
-  }
+  // ngOnInit() {
+  //   this.rides = this.rideService.getRides();
+  // }
 
   selectRide(ride: Ride) {
     this.router.navigate(['home']);
