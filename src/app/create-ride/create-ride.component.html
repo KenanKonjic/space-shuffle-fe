@@ -1,32 +1,37 @@
 <app-header></app-header>
 <div class="container">
   <h1 class="header-text">Offer a Ride</h1>
-  <form #createRideForm="ngForm" (submit)="submitForm" (ngSubmit)="onSubmit(createRideForm)">
+  <form [formGroup]="form" (ngSubmit)="submit()">
 
     <div class="form-field">
       <mat-form-field>
         <mat-label>From</mat-label>
-        <mat-select name="from" [(ngModel)]="from" [disableOptionCentering]="true" required>
-          <mat-option *ngFor="let location of locations" [value]="location">{{location}}</mat-option>
-        </mat-select>
+        <input matInput [formControlName]="'from'">
       </mat-form-field>
     </div>
 
     <div class="form-field">
       <mat-form-field>
         <mat-label>To</mat-label>
-        <mat-select name="to" [(ngModel)]="to" disableOptionCentering formControlName="from" required>
-          <mat-option *ngFor="let location of locations" [value]="location">{{location}}</mat-option>
-        </mat-select>
+        <input matInput [formControlName]="'to'">
       </mat-form-field>
     </div>
 
     <div class="form-field">
       <mat-form-field>
-        <mat-label>Date and Time</mat-label>
-        <input matInput [matDatepicker]="picker" name="datetime" [(ngModel)]="datetime" required>
-        <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
-        <mat-datepicker #picker></mat-datepicker>
+        <mat-label>No. of Seats</mat-label>
+        <input matInput [formControlName]="'seats'">
+      </mat-form-field>
+    </div>
+
+    <div class="form-field">
+      <mat-form-field>
+<!--        <mat-label>Date and Time</mat-label>-->
+<!--        <input matInput [matDatepicker]="picker" name="datetime" [(ngModel)]="'datetime'" required>-->
+<!--        <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>-->
+<!--        <mat-datepicker #picker></mat-datepicker>-->
+        <mat-label>Date</mat-label>
+        <input matInput [formControlName]="'datetime'">
       </mat-form-field>
     </div>
 

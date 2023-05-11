@@ -13,15 +13,15 @@ interface SideNavToggle {
   templateUrl: './dashboard.component.html',
   styleUrls: ['./dashboard.component.css']
 })
-export class DashboardComponent implements OnInit {
+export class DashboardComponent{
   rides: Ride[] = [];
   displayedColumns: string[] = ['id', 'driverName', 'startingLocation', 'endLocation', 'availableSeats', 'time', 'actions'];
   displayedColumns2: string[] = ['id', 'driverName', 'startingLocation', 'availableSeats', 'actions'];
   constructor(private rideService: RideService, private router: Router) { }
 
-  ngOnInit() {
-    this.rides = this.rideService.getRides();
-  }
+  // ngOnInit() {
+  //   this.rides = this.rideService.getRides();
+  // }
 
 
 

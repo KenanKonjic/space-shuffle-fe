@@ -14,5 +14,11 @@ export class HeaderComponent {
   logout(): void {
     this.router.navigate(['']);
   }
+  create(): void {
+    this.router.navigate(['create-ride']);
+  }
+  choose(): void {
+    this.router.navigate(['choose-ride']);
+  }
 
 }
