@@ -1,13 +1,17 @@
+
+
 body{
   background-image: url('../../hpi.png');
   background-size: cover;
   background-repeat: no-repeat;
   background-position: center;
   width: 100%;
-  height: 760px;
+  height: 780px;
   display: flex;
   align-content: space-between;
-  margin: 0px;
+  margin: 0;
+
+
 }
 
 form{
@@ -90,3 +94,8 @@ span{
   color: midnightblue;
 
 }
+
+
+
+
+
