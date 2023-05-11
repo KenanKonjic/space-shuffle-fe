@@ -15,8 +15,8 @@ export class CreateRideComponent implements OnInit{
   public form!: FormGroup;
 
   constructor(private formBuilder: FormBuilder,
-  private rideService: RideService,
-  private router: Router) {
+              private rideService: RideService,
+              private router: Router) {
   }
 
   ngOnInit(): void {
@@ -24,7 +24,7 @@ export class CreateRideComponent implements OnInit{
       'from': ['', Validators.required],
       'to': ['', Validators.required],
       'seats': ['', Validators.required],
-      'date': ['', Validators.required],
+      'time': ['', Validators.required],
     });
   }
 
@@ -33,14 +33,19 @@ export class CreateRideComponent implements OnInit{
       return;
     }
 
-    this.rideService.createRide(this.form.value).subscribe((ride: Ride) => {
-      this.navigateToRides(ride.id!);
+    let from = this.form.get('from')?.value;
+    let to = this.form.get('to')?.value;
+    let seats = this.form.get('seats')?.value;
+    let time = this.form.get('time')?.value;
+    let newRide: Ride = {id:123,startingLocation: from, time: time, availableSeats: seats, endLocation: to}
+    this.rideService.createRide(newRide).subscribe(() => {
+      this.navigateToRides();
     });
   }
 
-  private navigateToRides(rideId: number) {
+  private navigateToRides() {
     this.router.navigate([
-      'choose-ride'
+      'rides'
     ])
   }
 }
