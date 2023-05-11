@@ -45,7 +45,7 @@ export class CreateRideComponent implements OnInit{
 
   private navigateToRides() {
     this.router.navigate([
-      'rides'
+      'choose-ride'
     ])
   }
 }
