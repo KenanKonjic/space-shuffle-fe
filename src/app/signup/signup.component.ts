@@ -27,14 +27,12 @@ export class SignupComponent implements OnInit {
     if (this.loginForm.valid) {
       const username = this.loginForm.get('username')?.value;
       const password = this.loginForm.get('password')?.value;
-
-      // Prepare the payload with the username and password
       const payload = {
         username: username,
         password: password
       };
 
-      this.http.post<string>('https://space-shuffle.herokuapp.com/signup', payload)
+      this.http.post<string>('https://sudoku-be.herokuapp.com/register', payload)
         .subscribe(
           (response) => {
             console.log('Registration successful', response);
