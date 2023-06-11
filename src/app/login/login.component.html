@@ -1,23 +1,14 @@
 <div class="outer">
-<form action="action_page.php" method="post">
 
-
-  <div class="container">
-    <label for="uname"><b>Username</b></label>
-    <input type="text" placeholder="Enter Username" name="uname" required>
-
-    <label for="psw"><b>Password</b></label>
-    <input type="password" placeholder="Enter Password" name="psw" required>
-
-    <button type="submit" (click)="navigateToChooseRole()">Login</button>
-    <label>
-      <input type="checkbox" checked="checked" name="remember"> Remember me
-    </label>
+  <div>
+    <form (ngSubmit)="login()" [formGroup]="loginForm">
+      <input type="text" required name="email" id="email" formControlName="email">
+      <label>Email</label>
+      <input type="text" required name="psw" id="psw" formControlName="psw">
+      <label>Password</label>
+      <input type="submit">
+      <button type="button" (click)="navigateToHome()" class="cancelbtn">Cancel</button>
+      <span class="psw">Forgot <a href="#">password?</a></span>
+    </form>
   </div>
-
-  <div class="container" style="background-color:#f1f1f1">
-    <button type="button" (click)="navigateToHome()" class="cancelbtn">Cancel</button>
-    <span class="psw">Forgot <a href="#">password?</a></span>
-  </div>
-</form>
 </div>
