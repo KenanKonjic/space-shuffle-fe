@@ -20,20 +20,20 @@ export class LoginComponent implements OnInit{
 
   ngOnInit() {
     this.loginForm = this.formBuilder.group({
-      email: ['', Validators.required],
+      username: ['', Validators.required],
       psw: ['', Validators.required]
     });
   }
 
   login() {
     if (this.loginForm.valid) {
-      const email = this.loginForm.get('email')?.value;
+      const username = this.loginForm.get('username')?.value;
       const psw = this.loginForm.get('psw')?.value;
 
 
       const payload = {
-        email: email,
-        psw: psw
+        username: username,
+        password: psw
       };
 
       this.http.post<LoginResponse>('https://space-shuffle.herokuapp.com/authenticate', payload)
@@ -41,7 +41,7 @@ export class LoginComponent implements OnInit{
           (response) => {
             this.token = response.token;
             localStorage.setItem('token', this.token);
-            localStorage.setItem('email', email);
+            localStorage.setItem('username', username);
             this.router.navigate(['/choose-role']);
           },
           (error) => {

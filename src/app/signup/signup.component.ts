@@ -19,7 +19,7 @@ export class SignupComponent implements OnInit {
       sname: ['', Validators.required],
       username: ['', Validators.required],
       psw: ['', Validators.required],
-      yes: ['', Validators.required]
+      yes: ['']
     });
   }
 
@@ -29,7 +29,8 @@ export class SignupComponent implements OnInit {
       const psw = this.loginForm.get('psw')?.value;
       const name = this.loginForm.get('name')?.value;
       const sname = this.loginForm.get('sname')?.value;
-      const yes = this.loginForm.get('yes')?.value;
+      var yes = this.loginForm.get('yes')?.value;
+      if (yes == "") yes=false;
       const payload = {
         username: username,
         password: psw,
