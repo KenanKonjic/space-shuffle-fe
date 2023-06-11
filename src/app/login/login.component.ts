@@ -1,42 +1,61 @@
 import { Component, OnInit } from '@angular/core';
-import {ActivatedRoute, Router} from "@angular/router";
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
-
-
+import { HttpClient } from '@angular/common/http';
+import { AppModule } from '../app.module';
+import { LoginResponse } from './login-response.interface';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-login',
   templateUrl: './login.component.html',
   styleUrls: ['./login.component.css']
 })
-export class LoginComponent implements OnInit {
-  loginForm: FormGroup;
-  loading = false;
-  submitted = false;
-  returnUrl: string;
-  error = '';
+export class LoginComponent implements OnInit{
+  token: string | undefined;
+  loginForm!: FormGroup;
 
-  constructor(private router: Router, private formBuilder: FormBuilder, private route: ActivatedRoute){}
+
+  constructor(private formBuilder: FormBuilder, private http: HttpClient, private router: Router) {
+  }
 
   ngOnInit() {
     this.loginForm = this.formBuilder.group({
-      username: ['', Validators.required],
-      password: ['', Validators.required]
+      email: ['', Validators.required],
+      psw: ['', Validators.required]
     });
-
-    // get return url from route parameters or default to '/'
-    this.returnUrl = this.route.snapshot.queryParams['returnUrl'] || '/';
   }
 
+  login() {
+    if (this.loginForm.valid) {
+      const email = this.loginForm.get('email')?.value;
+      const psw = this.loginForm.get('psw')?.value;
 
-  navigateToHome(): void{
+
+      const payload = {
+        email: email,
+        psw: psw
+      };
+
+      this.http.post<LoginResponse>('https://space-shuffle.herokuapp.com/authenticate', payload)
+        .subscribe(
+          (response) => {
+            this.token = response.token;
+            localStorage.setItem('token', this.token);
+            localStorage.setItem('email', email);
+            this.router.navigate(['/choose-role']);
+          },
+          (error) => {
+            console.error('Login failed', error);
+          }
+        );
+
+
+    }
+  }
+
+  navigateToHome(): void {
     this.router.navigate([
       ''
-    ])
-  }
-  navigateToChooseRole(): void{
-    this.router.navigate([
-      'choose-role'
     ])
   }
 }
