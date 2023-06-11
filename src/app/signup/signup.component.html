@@ -4,19 +4,19 @@
 
     <div class="container">
       <label for="name"><b>Name</b></label>
-      <input type="text" placeholder="Enter Name" name="name" id="name" required>
+      <input type="text" placeholder="Enter Name" name="name" id="name" formControlName="name" required>
 
       <label for="sname"><b>Surname</b></label>
-      <input type="text" placeholder="Enter Surname" name="sname" id="sname" required>
+      <input type="text" placeholder="Enter Surname" name="sname" id="sname" formControlName="sname" required>
 
-      <label for="email"><b>Email</b></label>
-      <input type="text" placeholder="Enter Email" name="email" id="email" required>
+      <label for="username"><b>Email</b></label>
+      <input type="text" placeholder="Enter Email" name="username" id="username" formControlName="username" required>
 
       <label for="psw"><b>Password</b></label>
-      <input type="password" placeholder="Enter Password" name="psw" id="psw" required>
+      <input type="password" placeholder="Enter Password" name="psw" id="psw" formControlName="psw" required>
 
       <p>Do you have a car?</p>
-      <input type="checkbox" id="yes" name="yes" value="yes">
+      <input type="checkbox" id="yes" name="yes" value="yes" formControlName="yes">
       <label for="yes"><b>Yes</b></label><br>
 
       <div class="container" style="background-color:#f1f1f1">
