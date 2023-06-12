@@ -15,7 +15,7 @@ import {MatDatepickerModule} from "@angular/material/datepicker";
 import {MatNativeDateModule} from "@angular/material/core";
 import {HeaderComponent} from './header/header.component';
 import {MatToolbarModule} from "@angular/material/toolbar";
-import {NgOptimizedImage} from "@angular/common";
+import {CommonModule, NgOptimizedImage} from "@angular/common";
 import {AdminPanelComponent} from './admin-panel/admin-panel.component';
 import {SidenavComponent} from './admin-panel/sidenav/sidenav.component';
 import {DashboardComponent} from './admin-panel/dashboard/dashboard.component';
@@ -32,6 +32,7 @@ import {SignupComponent} from './signup/signup.component';
 import {ChooseRoleComponent} from './choose-role/choose-role.component';
 import {RideService} from "./services/ride.service";
 import {HttpClient, HttpClientModule} from "@angular/common/http";
+import { UserProfileComponent } from './user-profile/user-profile.component';
 
 @NgModule({
   declarations: [
@@ -50,6 +51,7 @@ import {HttpClient, HttpClientModule} from "@angular/common/http";
     SignupComponent,
     ChooseRideComponent,
     ChooseRoleComponent,
+    UserProfileComponent,
   ],
   imports: [
     BrowserModule,
@@ -69,7 +71,7 @@ import {HttpClient, HttpClientModule} from "@angular/common/http";
     MatToolbarModule,
     NgOptimizedImage,
     HttpClientModule,
-
+    CommonModule,
 
   ],
   providers: [UserService, RideService,  HttpClient],

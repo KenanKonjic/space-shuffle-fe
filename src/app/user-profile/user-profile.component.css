@@ -1,0 +1,4 @@
+.bg-c-lite-green {
+  background: -webkit-gradient(linear, left top, right top, from(mediumspringgreen), to(darkblue));
+  background: linear-gradient(to right, darkblue, mediumspringgreen);
+}
