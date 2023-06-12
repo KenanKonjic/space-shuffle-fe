@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import {Component, OnInit} from '@angular/core';
 import {Router} from "@angular/router";
 
 @Component({
@@ -7,11 +7,14 @@ import {Router} from "@angular/router";
   styleUrls: ['./header.component.css']
 })
 
-export class HeaderComponent {
+export class HeaderComponent implements OnInit{
+
+  username: string | null;
 
   constructor(private router: Router) {}
 
   logout(): void {
+    localStorage.clear();
     this.router.navigate(['']);
   }
   create(): void {
@@ -21,4 +24,8 @@ export class HeaderComponent {
     this.router.navigate(['choose-ride']);
   }
 
+  ngOnInit(): void {
+      // @ts-ignore
+    this.username=localStorage.getItem('username').toString();
+  }
 }

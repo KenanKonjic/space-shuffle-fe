@@ -17,21 +17,26 @@ export class SignupComponent implements OnInit {
     this.loginForm = this.formBuilder.group({
       name: ['', Validators.required],
       sname: ['', Validators.required],
-      email: ['', Validators.required],
+      username: ['', Validators.required],
       psw: ['', Validators.required],
-      yes: ['', Validators.required]
+      yes: ['']
     });
   }
 
   signup() {
     if (this.loginForm.valid) {
       const username = this.loginForm.get('username')?.value;
-      const password = this.loginForm.get('password')?.value;
-
-      // Prepare the payload with the username and password
+      const psw = this.loginForm.get('psw')?.value;
+      const name = this.loginForm.get('name')?.value;
+      const sname = this.loginForm.get('sname')?.value;
+      var yes = this.loginForm.get('yes')?.value;
+      if (yes == "") yes=false;
       const payload = {
         username: username,
-        password: password
+        password: psw,
+        name : name,
+        surname: sname,
+        car: yes
       };
 
       this.http.post<string>('https://space-shuffle.herokuapp.com/signup', payload)
