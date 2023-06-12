@@ -32,7 +32,7 @@ input[type="text"] {
   box-sizing: border-box;
   color: midnightblue;
 }
-#email{
+#username{
   width: 80%;
   padding: 10px;
   margin-bottom: 1vh;
@@ -67,7 +67,7 @@ body::before {
 }
 
 form{
-  top: 20vh;
+  top: 10vh;
   left: 10vw;
   padding: 55px;
   border-radius: 5px;

@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import {Component, OnInit} from '@angular/core';
 import {ActivatedRoute, Router} from "@angular/router";
 import {FormBuilder} from "@angular/forms";
 
@@ -7,19 +7,29 @@ import {FormBuilder} from "@angular/forms";
   templateUrl: './choose-role.component.html',
   styleUrls: ['./choose-role.component.css']
 })
-export class ChooseRoleComponent {
+export class ChooseRoleComponent implements OnInit {
 
-  constructor(private router: Router, private formBuilder: FormBuilder, private route: ActivatedRoute){}
+  constructor(private router: Router, private formBuilder: FormBuilder, private route: ActivatedRoute) {
+  }
 
-  navigateToChoose(): void{
+  navigateToChoose(): void {
     this.router.navigate([
       'choose-ride'
     ])
 
   }
-  navigateToCreate(): void{
+
+  navigateToCreate(): void {
     this.router.navigate([
       'create-ride'
     ])
+  }
+
+  ngOnInit(): void {
+    const token = localStorage.getItem('token');
+    if (!token) {
+      this.router.navigate(['login'], {queryParams: {loginRequired: true}});
+    } else {
+    }
   }
 }

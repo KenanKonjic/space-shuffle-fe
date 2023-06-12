@@ -19,9 +19,12 @@ export class DashboardComponent{
   displayedColumns2: string[] = ['id', 'driverName', 'startingLocation', 'availableSeats', 'actions'];
   constructor(private rideService: RideService, private router: Router) { }
 
-  // ngOnInit() {
-  //   this.rides = this.rideService.getRides();
-  // }
+  ngOnInit() {
+    this.rideService.getRides().subscribe((rides)=> {
+      this.rides=rides;
+      console.log(rides);
+    });
+  }
 
 
 
