@@ -13,13 +13,13 @@
 
         <div>
           <label id="label" for="name"><b>Please complete all information below:</b></label><br>
-          <input type="text" placeholder="Enter Name" name="name" id="name" required>
-          <input type="text" placeholder="Enter Surname" name="sname" id="sname" required>
-          <input type="text" placeholder="Enter Email" name="email" id="email" required>
-          <input type="password" placeholder="Enter Password" name="psw" id="psw" required>
+          <input type="text" placeholder="Enter Name" name="name" id="name" formControlName="name" required>
+          <input type="text" placeholder="Enter Surname" name="sname" id="sname" formControlName="sname" required>
+          <input type="text" placeholder="Enter Email" name="username" id="username" formControlName="username" required>
+          <input type="password" placeholder="Enter Password" name="psw" id="psw" formControlName="psw" required>
           <p class="question">Do you have a car?</p>
             <div class="checkbox">
-              <input type="checkbox" id="yes" name="yes" value="yes">
+              <input type="checkbox" id="yes" name="yes" value="yes" formControlName="yes">
               <label for="yes"><b>Yes</b></label><br>
           </div>
           <input class="submit" type="submit">
