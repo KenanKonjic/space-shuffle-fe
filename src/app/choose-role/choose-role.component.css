@@ -1,4 +1,9 @@
 
+*{
+  margin: 0 auto;
+}
+
+
 body {
   background-image: url("../../assets/space.jpg");
   background-size: cover;
@@ -69,6 +74,28 @@ button.driver{
 
 }
 
+@media only screen and (max-width: 600px) {
+  /* Adjust the max-width value as needed */
+  form {
+    left: 5%;
+    top: 2%;
+    padding: 5% 10%;
+  }
 
+  button {
+    margin: 5% 3%;
+    padding: 20% 5%;
+    width: 90%;
+    height: 30vh;
+  }
+
+  h1 {
+    font-size: 24px;
+  }
+
+  .btn-names {
+    padding: 0 5%;
+  }
+}
 
 

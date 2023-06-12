@@ -12,7 +12,8 @@ export class ChooseRideComponent implements OnInit {
   rides: Ride[] = [];
   displayedColumns: string[] = ['id', 'startingLocation', 'endLocation', 'availableSeats', 'time', 'actions'];
 
-  constructor(private rideService: RideService, private router: Router) { }
+  constructor(private rideService: RideService, private router: Router) {
+  }
 
   ngOnInit() {
     const token = localStorage.getItem('token');
@@ -24,11 +25,15 @@ export class ChooseRideComponent implements OnInit {
         console.log(rides);
       });
     }
+
   }
 
-  // selectRide(ride: Ride) {
-  //   this.router.navigate(['home']);
-  // }
+  navigateToPopup(): void {
+    this.router.navigate([
+      'poppup'
+    ])
+
+  }
 }
 
 
