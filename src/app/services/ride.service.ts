@@ -23,5 +23,4 @@ export class RideService {
   createRide(ride:Ride): Observable<Ride> {
     return this.http.post<Ride>(`${this.baseUrl}`, ride);
   }
-
 }

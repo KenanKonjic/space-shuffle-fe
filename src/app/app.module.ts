@@ -33,6 +33,7 @@ import {ChooseRoleComponent} from './choose-role/choose-role.component';
 import {RideService} from "./services/ride.service";
 import {HttpClient, HttpClientModule} from "@angular/common/http";
 import { UserProfileComponent } from './user-profile/user-profile.component';
+import {PoppupComponent} from "./poppup/poppup.component";
 
 @NgModule({
   declarations: [
@@ -52,6 +53,7 @@ import { UserProfileComponent } from './user-profile/user-profile.component';
     ChooseRideComponent,
     ChooseRoleComponent,
     UserProfileComponent,
+    PoppupComponent
   ],
   imports: [
     BrowserModule,

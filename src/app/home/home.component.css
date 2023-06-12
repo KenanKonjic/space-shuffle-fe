@@ -17,7 +17,7 @@ body{
 }
 
 form{
-  top: 10vh;
+  top: 3%;
   width: 600px;
   padding: 55px;
   background-color: transparent;
@@ -77,8 +77,9 @@ p{
   text-align: center;
   font-family: "Myanmar Text", serif;
   font-size: 45px;
-  margin-bottom: -25px;
-  color: midnightblue;
+  margin-bottom: -35px;
+  color: white;
+  margin-top: 35px;
 }
 
 h2{
@@ -87,15 +88,23 @@ h2{
   font-family: "Myanmar Text", serif;
   background-color: transparent;
   margin-bottom: -25px;
-  color: midnightblue;
+  color: white;
 }
 
 span{
   color: midnightblue;
-
 }
 
+@media only screen and (max-width: 600px) {
+  /* Adjust the max-width value as needed */
+  form {
+    width: 90%;
+    padding: 25px;
+  }
 
-
+  button {
+    width: 100%;
+  }
+}
 
 

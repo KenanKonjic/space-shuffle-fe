@@ -51,9 +51,9 @@ export class SignupComponent implements OnInit {
         );
     }
   }
-  navigateToHome(): void{
+  navigateToLogin(): void{
     this.router.navigate([
-      ''
+      'login'
     ])}
 }
 
