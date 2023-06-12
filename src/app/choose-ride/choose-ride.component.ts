@@ -15,10 +15,15 @@ export class ChooseRideComponent implements OnInit {
   constructor(private rideService: RideService, private router: Router) { }
 
   ngOnInit() {
-    this.rideService.getRides().subscribe((rides) => {
-      this.rides = rides;
-      console.log(rides);
-    });
+    const token = localStorage.getItem('token');
+    if (!token) {
+      this.router.navigate(['login'], {queryParams: {loginRequired: true}});
+    } else {
+      this.rideService.getRides().subscribe((rides) => {
+        this.rides = rides;
+        console.log(rides);
+      });
+    }
   }
 
   // selectRide(ride: Ride) {
