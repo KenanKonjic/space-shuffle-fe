@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
-import {User} from "../constants/user.enum";
+// import {User} from "../constants/user.enum";
 import {UserService} from "../services/user.service";
+import {UserModel} from "../models/user.model";
 
 @Component({
   selector: 'app-user-profile',
@@ -8,24 +9,39 @@ import {UserService} from "../services/user.service";
   styleUrls: ['./user-profile.component.css']
 })
 export class UserProfileComponent {
-  public user: User;
-  private id: number;
+  user: UserModel;
+  constructor() { }
 
-  constructor(private userService: UserService) { }
-
-  ngOnInit(): void {
-    this.loadUserProfile();
+  ngOnInit() {
+    this.user = {
+      username: 'adna123',
+      password: 'adna123',
+      name: 'Adna',
+      surname: 'Beganovic',
+      email: 'adnabeg@example.com',
+      hasCar: true
+    };
+  }
   }
 
-  private loadUserProfile(): void {
-    this.userService.getUser(this.id).subscribe(
-      // (user: User) => {
-      //   this.user = user;
-      // },
-      (error: any) => {
-        console.error('Error loading user profile:', error);
-      }
-    );
-  }
-}
+  // public user: User;
+  // private id: number;
+  //
+  // constructor(private userService: UserService) { }
+  //
+  // ngOnInit(): void {
+  //   this.loadUserProfile();
+  // }
+  //
+  // private loadUserProfile(): void {
+  //   this.userService.getUser(this.id).subscribe(
+  //     (user: User) => {
+  //       this.user = user;
+  //     },
+  //     (error: any) => {
+  //       console.error('Error loading user profile:', error);
+  //     }
+  //   );
+  // }
+
 
