@@ -11,6 +11,7 @@ import {DashboardComponent} from "./admin-panel/dashboard/dashboard.component";
 import {RidesComponent} from "./admin-panel/rides/rides.component";
 import {UsersComponent} from "./admin-panel/users/users.component";
 import {StatisticsComponent} from "./admin-panel/statistics/statistics.component";
+import {UserProfileComponent} from "./user-profile/user-profile.component";
 
 const routes: Routes = [
   {
@@ -65,8 +66,11 @@ const routes: Routes = [
   {
     path:'statistics',
     component:StatisticsComponent
-  }
-
+  },
+   {
+    path: 'user-profile',
+     component:UserProfileComponent
+   },
 ];
 
 @NgModule({
