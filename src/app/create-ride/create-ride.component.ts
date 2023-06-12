@@ -20,12 +20,17 @@ export class CreateRideComponent implements OnInit{
   }
 
   ngOnInit(): void {
-    this.form = this.formBuilder.group({
-      'from': ['', Validators.required],
-      'to': ['', Validators.required],
-      'seats': ['', Validators.required],
-      'time': ['', Validators.required],
-    });
+    const token = localStorage.getItem('token');
+    if (!token) {
+      this.router.navigate(['login'], { queryParams: { loginRequired: true } });
+    } else {
+      this.form = this.formBuilder.group({
+        from: ['', Validators.required],
+        to: ['', Validators.required],
+        seats: ['', Validators.required],
+        time: ['', Validators.required],
+      });
+    }
   }
 
   public submit(): void {
