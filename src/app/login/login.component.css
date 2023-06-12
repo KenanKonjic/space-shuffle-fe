@@ -1,70 +1,128 @@
-/* Bordered form */
 .outer {
-  background-color: pink;
-}
-
-form {
-  border: 3px solid #f1f1f1;
-  left: 50%;
-  top: 50%;
-  margin-left: -27%;
-  position: absolute;
-  margin-top: -15%;
-  padding: 1% 5%;
-  font-family: OpenSymbol, sans-serif;
-}
-
-/* Full-width inputs */
-input[type=text], input[type=password] {
+  align-items: center;
+  max-width: 400px;
   width: 100%;
-  padding: 12px 20px;
-  margin: 8px 0;
-  display: inline-block;
-  border: 1px solid #ccc;
-  box-sizing: border-box;
+  margin: auto;
 }
 
-/* Set a style for all buttons */
+input[type="text"],
+input[type="password"] {
+  width: 80%;
+  padding: 10px;
+  margin-bottom: 20px;
+  border: 1px solid midnightblue;
+  border-radius: 5px;
+  box-sizing: border-box;
+  color: midnightblue;
+}
+
+body{
+  justify-content: center;
+  background-image: url('../../hpi.png');
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  align-content: space-between;
+  margin: 0 ;
+}
+
+form{
+  top: 20vh;
+  width: 600px;
+  padding: 55px;
+  background-color: transparent;
+  border-radius: 5px;
+  border: 3px double midnightblue;
+  position: absolute;
+  text-align: center;
+  height: fit-content;
+  display: inline;
+  backdrop-filter: blur(13px);
+}
+
+.kontent{
+  opacity: 100%;
+}
+
 button {
-  background-color: #051247;
+  background-color: midnightblue;
   color: white;
   padding: 14px 20px;
-  margin: 8px 0;
-  border: none;
+  margin-left: 8px;
+  margin-bottom: 8px;
+  margin-top: 12px;
+  border: 0.2px solid white;
+  border-radius: 6px;
   cursor: pointer;
-  width: 100%;
+  width: 50%;
 }
 
-/* Add a hover effect for buttons */
+.cancelbtn{
+  background-color: transparent;
+  color: midnightblue;
+  padding: 14px 20px;
+  margin-left: 8px;
+  margin-bottom: 8px;
+  margin-top: 12px;
+  border: 0.2px solid #f44336;
+  border-radius: 6px;
+  cursor: pointer;
+  width: 50%;
+}
+
+.cancelbtn:hover{
+  background-color: midnightblue;
+  color: #f44336;
+}
+
+.submit {
+  background-color: midnightblue;
+  color: white;
+  padding: 14px 20px;
+  margin-left: 8px;
+  margin-bottom: 8px;
+  margin-top: 12px;
+  border: 0.2px solid white;
+  border-radius: 6px;
+  cursor: pointer;
+  width: 50%;
+
+}
+.submit:hover {
+  opacity: 0.8;
+}
 button:hover {
   opacity: 0.8;
 }
 
-/* Extra style for the cancel button (red) */
-.cancelbtn {
-  width: auto;
-  padding: 10px 18px;
-  background-color: #f44336;
+/*.behind {
+  background-color: #051247 ;
+  padding: 8px;
+  width: 23px;
+  height: 44px;
+
+*/
+
+.logo{
+  height: 340px;
+  width: 340px;
+  align-items: center;
+
 }
 
-/* Add padding to containers */
-.container {
-  padding: 16px;
+p{
+  text-align: center;
+  font-family: "Myanmar Text", serif;
+  font-size: 45px;
+  margin-bottom: -25px;
+  color: white;
+  margin-top: 0px;
 }
 
-/* The "Forgot password" text */
-span.psw {
-  float: right;
-  padding-top: 16px;
-}
+span{
+  color: midnightblue;
 
-/* Change styles for span and cancel button on extra small screens */
-@media screen and (max-width: 300px) {
-  span.psw {
-    display: block;
-    float: none;
-  }
-  .cancelbtn {
-    width: 100%;
-  }
 }

@@ -1,14 +1,32 @@
-<div class="outer">
+<body>
 
-  <div>
-    <form (ngSubmit)="login()" [formGroup]="loginForm">
-      <input type="text" required name="email" id="email" formControlName="email">
-      <label>Email</label>
-      <input type="text" required name="psw" id="psw" formControlName="psw">
-      <label>Password</label>
-      <input type="submit">
-      <button type="button" (click)="navigateToHome()" class="cancelbtn">Cancel</button>
-      <span class="psw">Forgot <a href="#">password?</a></span>
-    </form>
+
+<form (ngSubmit)="login()" [formGroup]="loginForm">
+
+
+  <div class="kontent">
+
+    <p><span><b>Space</b></span><i>Shuffle</i></p>
+    <img class="logo" src="assets/SpaceShuffleLogo.png" height=340px width=340px/>
+
+    <div class="outer">
+
+      <div>
+
+          <input type="text" required name="username" id="username" formControlName="username" placeholder="Email">
+
+          <input type="text" required name="psw" id="psw" formControlName="psw" placeholder="Password">
+          <input class="submit" type="submit">
+          <button type="button" (click)="navigateToHome()" class="cancelbtn">Cancel</button>
+          <br>
+        <span class="psw">Forgot <a href="#">password?</a></span>
+
+      </div>
+    </div>
   </div>
-</div>
+</form>
+
+</body>
+
+
+
