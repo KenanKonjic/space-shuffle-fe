@@ -59,6 +59,7 @@ import { AuthService } from './auth-guard/auth.service';
     ChooseRideComponent,
     ChooseRoleComponent,
     UserProfileComponent,
+    PoppupComponent,
   ],
   imports: [
     BrowserModule,

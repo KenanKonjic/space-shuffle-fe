@@ -67,11 +67,11 @@ const routes: Routes = [
   },
   { path: '**', redirectTo: '/login' },
 
-  {component:UserProfileComponent},
-
-  {   path: 'poppup',
+  {
+    path: 'poppup',
     component: PoppupComponent
   }
+
 ];
 
 @NgModule({
