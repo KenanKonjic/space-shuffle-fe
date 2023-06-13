@@ -1,20 +1,15 @@
-<!DOCTYPE html>
-<html>
-<head>
-  <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
-  <title>Home page</title>
-  <meta name="author" content="Amra Isaković"/>
-  <link rel="stylesheet" href="choose-role.component.css">
-</head>
-
 <body>
 
   <form>
+    <div class="btn-names">
     <h1>What are you in the mood for today?</h1>
+    </div>
 
+    <div class="btn-names">
     <button class="driver" type="button" (click)="navigateToCreate()"></button>
 
     <button class="passenger" type="button" (click)="navigateToChoose()"></button>
+    </div>
 
     <div class="btn-names">
       <h2 class="driv">DRIVING</h2>
@@ -23,5 +18,4 @@
 
   </form>
 </body>
-</html>
 

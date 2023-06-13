@@ -3,6 +3,5 @@ export interface UserModel{
   password: string;
   name: string;
   surname: string;
-  email: string;
-  hasCar: boolean;
+  car: boolean;
 }

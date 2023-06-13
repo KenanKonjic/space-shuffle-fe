@@ -127,3 +127,10 @@ span {
 .error-message {
   color: red;
 }
+
+@media only screen and (max-width: 600px) {
+  /* Adjust the max-width value as needed */
+  form {
+    padding: 25px;
+  }
+}
