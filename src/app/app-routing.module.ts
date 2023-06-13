@@ -81,10 +81,6 @@ const routes: Routes = [
   },
   
   { path: '**', redirectTo: '/login' },
-
-  {component:UserProfileComponent},
-
-  {   path: 'poppup', component:UserProfileComponent},
     
   {
     path: 'poppup',
