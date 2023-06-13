@@ -3,8 +3,8 @@ import { Ride } from '../models/ride.model';
 import { environment } from '../../environments/environment';
 import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
-//const URL = `${environment.backendUrl}/ride`;
-const URL = `http://localhost:8080/ride`;
+const URL = `${environment.backendUrl}/ride`;
+//const URL = `http://localhost:8080/ride`;
 
 @Injectable()
 export class RideService {
