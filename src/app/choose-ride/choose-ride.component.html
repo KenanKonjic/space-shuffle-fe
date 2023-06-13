@@ -31,7 +31,7 @@
     <ng-container matColumnDef="actions">
       <mat-header-cell *matHeaderCellDef>Actions</mat-header-cell>
       <mat-cell *matCellDef="let ride">
-        <button mat-raised-button color="primary" (click)="navigateToPopup()">Select Ride</button>
+        <button mat-raised-button color="primary" (click)="selectRide(ride.id)">Select Ride</button>
       </mat-cell>
     </ng-container>
 

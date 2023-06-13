@@ -45,6 +45,9 @@ export class ChooseRideComponent implements OnInit {
             this.rides[rideIndex] = updatedRide;
           }
           console.log('Ride selected:', updatedRide);
+          this.router.navigateByUrl('/', { skipLocationChange: true }).then(() => {
+            this.router.navigate(['choose-ride']);
+          });
         },
         (error) => {
           console.error('Error selecting ride:', error);
@@ -53,9 +56,11 @@ export class ChooseRideComponent implements OnInit {
     }
   }
 
-  // selectRide(ride: Ride) {
-  //   this.router.navigate(['home']);
-  // }
+  public navigateToPopup() {
+    this.router.navigate([
+      'poppup'
+    ])
+  }
 }
 
 
