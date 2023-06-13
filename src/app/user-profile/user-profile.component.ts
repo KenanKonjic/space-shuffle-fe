@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 // import {User} from "../constants/user.enum";
 import {UserService} from "../services/user.service";
 import {UserModel} from "../models/user.model";
+import {RideService} from "../services/ride.service";
 
 @Component({
   selector: 'app-user-profile',
@@ -10,38 +11,33 @@ import {UserModel} from "../models/user.model";
 })
 export class UserProfileComponent {
   user: UserModel;
-  constructor() { }
+  username: string | null;
+
+  constructor(private userService: UserService) { }
 
   ngOnInit() {
     this.user = {
-      username: 'adna123',
-      password: 'adna123',
-      name: 'Adna',
-      surname: 'Beganovic',
-      email: 'adnabeg@example.com',
-      hasCar: true
+      username: '',
+      password: '',
+      name: '',
+      surname: '',
+      car: true
     };
-  }
+    // @ts-ignore
+    this.username = localStorage.getItem('username').toString();
+    this.searchUserByUsername(this.username);
   }
 
-  // public user: User;
-  // private id: number;
-  //
-  // constructor(private userService: UserService) { }
-  //
-  // ngOnInit(): void {
-  //   this.loadUserProfile();
-  // }
-  //
-  // private loadUserProfile(): void {
-  //   this.userService.getUser(this.id).subscribe(
-  //     (user: User) => {
-  //       this.user = user;
-  //     },
-  //     (error: any) => {
-  //       console.error('Error loading user profile:', error);
-  //     }
-  //   );
-  // }
+  searchUserByUsername(username: string) {
+    this.userService.searchUserByUsername(username).subscribe(
+      (response: UserModel) => {
+        this.user = response;
+      },
+      (error) => {
+        console.error('Failed to search user:', error);
+      }
+    );
+  }
+}
 
 
