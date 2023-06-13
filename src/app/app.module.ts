@@ -13,6 +13,7 @@ import {
   BrowserAnimationsModule,
   NoopAnimationsModule,
 } from '@angular/platform-browser/animations';
+import { MatDialogModule } from '@angular/material/dialog';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { MatDatepickerModule } from '@angular/material/datepicker';
 import { MatNativeDateModule } from '@angular/material/core';
@@ -38,6 +39,8 @@ import { HttpClient, HttpClientModule } from '@angular/common/http';
 import { UserProfileComponent } from './user-profile/user-profile.component';
 import { ToastrModule } from 'ngx-toastr';
 import { AuthService } from './auth-guard/auth.service';
+import { UpdateRideComponent } from './admin-panel/dashboard/update-ride/update-ride.component';
+import { DeleteRideComponent } from './admin-panel/dashboard/delete-ride/delete-ride.component';
 
 @NgModule({
   declarations: [
@@ -57,6 +60,8 @@ import { AuthService } from './auth-guard/auth.service';
     ChooseRideComponent,
     ChooseRoleComponent,
     UserProfileComponent,
+    UpdateRideComponent,
+    DeleteRideComponent,
   ],
   imports: [
     BrowserModule,
@@ -65,6 +70,7 @@ import { AuthService } from './auth-guard/auth.service';
     MatFormFieldModule,
     MatInputModule,
     MatSelectModule,
+    MatDialogModule,
     BrowserAnimationsModule,
     NoopAnimationsModule,
     FormsModule,

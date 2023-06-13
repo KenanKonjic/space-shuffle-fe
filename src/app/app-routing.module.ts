@@ -14,12 +14,13 @@ import { StatisticsComponent } from './admin-panel/statistics/statistics.compone
 import { UserProfileComponent } from './user-profile/user-profile.component';
 import { AuthGuard } from './auth-guard/auth.guard';
 import { AdminAuthGuard } from './auth-guard/admin-auth.guard';
+import { LoginAuthGuard } from './auth-guard/login-auth.guard';
 
 const routes: Routes = [
   {
     path: 'login',
     component: LoginComponent,
-    // canActivate: [LoginAuthGuard],
+    //canActivate: [LoginAuthGuard],
   },
   {
     path: 'signup',
