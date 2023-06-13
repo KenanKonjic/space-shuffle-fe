@@ -12,6 +12,7 @@ import {RidesComponent} from "./admin-panel/rides/rides.component";
 import {UsersComponent} from "./admin-panel/users/users.component";
 import {StatisticsComponent} from "./admin-panel/statistics/statistics.component";
 import {UserProfileComponent} from "./user-profile/user-profile.component";
+import {PoppupComponent} from "./poppup/poppup.component";
 
 const routes: Routes = [
   {
@@ -71,6 +72,10 @@ const routes: Routes = [
     path: 'user-profile',
      component:UserProfileComponent
    },
+  {
+    path: 'poppup',
+    component: PoppupComponent
+  }
 ];
 
 @NgModule({

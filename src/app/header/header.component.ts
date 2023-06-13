@@ -23,6 +23,9 @@ export class HeaderComponent implements OnInit{
   choose(): void {
     this.router.navigate(['choose-ride']);
   }
+  profile(): void{
+    this.router.navigate(['user-profile']);
+  }
 
   ngOnInit(): void {
       // @ts-ignore
