@@ -1,23 +1,155 @@
 <app-header></app-header>
+
 <div class="container">
   <h1 class="header-text">Offer a Ride</h1>
-  <form [formGroup]="form" (ngSubmit)="submit()">
 
-    <div class="form-field">
+  <div>
+    <input type="radio" class="radio" name="selectedDiv" value="div1" [(ngModel)]="selectedDiv" >
+    <input type="radio" class="radio"name="selectedDiv" value="div2" [(ngModel)]="selectedDiv" >
+  </div>
+
+  <div [style.display]="selectedDiv === 'div1' ? 'block' : 'none'">Route A</div>
+  <div [style.display]="selectedDiv === 'div2' ? 'block' : 'none'">Route B</div>
+
+
+  <form [formGroup]="form" (ngSubmit)="submit()">
+    <div [style.display]="selectedDiv === 'div1' ? 'block' : 'none'">
+
+    <div class="form-field" >
       <mat-form-field>
         <mat-label>From</mat-label>
-        <input matInput [formControlName]="'from'">
+        <select matNativeControl [formControlName]="'from'" class="slecet-css" onmousedown="if(this.options.length>5){this.size=5;}"  onchange='this.size=0;' onblur="this.size=0;">
+          <option value="">Select</option>
+          <option value="Baščaršija">Baščaršija</option>
+          <option value="Katedrala">Katedrala</option>
+          <option value="Marijin Dvor">Marijin Dvor</option>
+          <option value="UNSA">UNSA</option>
+          <option value="Pofalići">Pofalići</option>
+          <option value="Socijalno">Socijalno</option>
+          <option value="Dolac Malta">Dolac Malta</option>
+          <option value="Čengić Vila">Čengić Vila</option>
+          <option value="Otoka">Otoka</option>
+          <option value="Alipašin Most">Alipašin Most</option>
+          <option value="Rtv">Rtv</option>
+          <option value="Alipašino Polje">Alipašino Polje</option>
+          <option value="Nedžarići">Nedžarići</option>
+          <option value="Avaz / Oslobođenje">Otoka</option>
+          <option value="Stup">Stup</option>
+          <option value="Energoinvest">Energoinvest</option>
+          <option value="Kasindolska">Kasindolska</option>
+          <option value="SSST">SSST</option>
+        </select>
       </mat-form-field>
     </div>
 
     <div class="form-field">
       <mat-form-field>
         <mat-label>To</mat-label>
-        <input matInput [formControlName]="'to'">
+        <select matNativeControl [formControlName]="'to'" class="slecet-css" onmousedown="if(this.options.length>5){this.size=5;}"  onchange='this.size=0;' onblur="this.size=0;">
+          <option value="">Select</option>
+          <option value="Baščaršija">Baščaršija</option>
+          <option value="Katedrala">Katedrala</option>
+          <option value="Marijin Dvor">Marijin Dvor</option>
+          <option value="UNSA">UNSA</option>
+          <option value="Pofalići">Pofalići</option>
+          <option value="Socijalno">Socijalno</option>
+          <option value="Dolac Malta">Dolac Malta</option>
+          <option value="Čengić Vila">Čengić Vila</option>
+          <option value="Otoka">Otoka</option>
+          <option value="Alipašin Most">Alipašin Most</option>
+          <option value="Rtv">Rtv</option>
+          <option value="Alipašino Polje">Alipašino Polje</option>
+          <option value="Nedžarići">Nedžarići</option>
+          <option value="Avaz / Oslobođenje">Otoka</option>
+          <option value="Stup">Stup</option>
+          <option value="Energoinvest">Energoinvest</option>
+          <option value="Kasindolska">Kasindolska</option>
+          <option value="SSST">SSST</option>
+        </select>
       </mat-form-field>
     </div>
 
-    <div class="form-field">
+      <div class="form-field">
+        <mat-form-field>
+          <mat-label>No. of Seats</mat-label>
+          <input matInput [formControlName]="'seats'">
+        </mat-form-field>
+      </div>
+
+      <div class="form-field">
+        <mat-form-field>
+          <!--        <mat-label>Date and Time</mat-label>-->
+          <!--        <input matInput [matDatepicker]="picker" name="datetime" [(ngModel)]="'datetime'" required>-->
+          <!--        <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>-->
+          <!--        <mat-datepicker #picker></mat-datepicker>-->
+          <mat-label>Time</mat-label>
+          <input matInput [formControlName]="'time'">
+          <p>HH:MM:00</p>
+        </mat-form-field>
+      </div>
+    </div>
+
+
+
+    <div [style.display]="selectedDiv === 'div2' ? 'block' : 'none'">
+
+      <div class="form-field" >
+        <mat-form-field>
+          <mat-label>From</mat-label>
+          <select matNativeControl [formControlName]="'from'" class="slecet-css" onmousedown="if(this.options.length>5){this.size=5;}"  onchange='this.size=0;' onblur="this.size=0;">
+            <option value="">Select</option>
+            <option value="SSST">SSST</option>
+            <option value="Dobrinja">Dobrinja</option>
+            <option value="Dobrinja (Škola)">Dobrinja (Škola)</option>
+            <option value="Dobrinja 5">Dobrinja 5</option>
+            <option value="Mojmilo II">Mojmilo II</option>
+            <option value="Mojmilo">Mojmilo</option>
+            <option value="Alipašino Polje">Alipašino Polje</option>
+            <option value="Švrakino Selo I">Švrakino Selo I</option>
+            <option value="Švrakino Selo II">Švrakino Selo II</option>
+            <option value="Aneks">Aneks</option>
+            <option value="Hrasno I">Hrasno I</option>
+            <option value="Azize Šaćirbegović">Azize Šaćirbegović</option>
+            <option value="Stadion Grbavica">Stadion Grbavica</option>
+            <option value="Grbavica">Grbavica</option>
+            <option value="Marijin Dvor">Marijin Dvor</option>
+            <option value="Skenderija">Skenderija</option>
+            <option value="Čobanija">Čobanija</option>
+            <option value="Drvenija">Drvenija</option>
+            <option value="Trg Austrije">Trg Austrije</option>
+          </select>
+        </mat-form-field>
+      </div>
+
+      <div class="form-field" >
+        <mat-form-field>
+          <mat-label>To</mat-label>
+          <select matNativeControl [formControlName]="'to'" class="slecet-css" onmousedown="if(this.options.length>5){this.size=5;}"  onchange='this.size=0;' onblur="this.size=0;">
+            <option value="">Select</option>
+            <option value="SSST">SSST</option>
+            <option value="Dobrinja">Dobrinja</option>
+            <option value="Dobrinja (Škola)">Dobrinja (Škola)</option>
+            <option value="Dobrinja 5">Dobrinja 5</option>
+            <option value="Mojmilo II">Mojmilo II</option>
+            <option value="Mojmilo">Mojmilo</option>
+            <option value="Alipašino Polje">Alipašino Polje</option>
+            <option value="Švrakino Selo I">Švrakino Selo I</option>
+            <option value="Švrakino Selo II">Švrakino Selo II</option>
+            <option value="Aneks">Aneks</option>
+            <option value="Hrasno I">Hrasno I</option>
+            <option value="Azize Šaćirbegović">Azize Šaćirbegović</option>
+            <option value="Stadion Grbavica">Stadion Grbavica</option>
+            <option value="Grbavica">Grbavica</option>
+            <option value="Marijin Dvor">Marijin Dvor</option>
+            <option value="Skenderija">Skenderija</option>
+            <option value="Čobanija">Čobanija</option>
+            <option value="Drvenija">Drvenija</option>
+            <option value="Trg Austrije">Trg Austrije</option>
+          </select>
+        </mat-form-field>
+      </div>
+
+      <div class="form-field">
       <mat-form-field>
         <mat-label>No. of Seats</mat-label>
         <input matInput [formControlName]="'seats'">
@@ -32,9 +164,69 @@
         <!--        <mat-datepicker #picker></mat-datepicker>-->
         <mat-label>Time</mat-label>
         <input matInput [formControlName]="'time'">
+        <p>HH:MM:00</p>
       </mat-form-field>
     </div>
+    </div>
 
+
+
+
+
+
+
+
+
+   <!-- <div class="field2">
+    <div class="form-field">
+      <mat-form-field>
+        <mat-label>Time</mat-label>
+        <select matNativeControl formControlName="selectedHour">
+          <option value="">Select Hour</option>
+          <option *ngFor="let hour of hours" [value]="hour">{{ hour }}</option>
+          <option value="">Select Minutes</option>
+          <option *ngFor="let minutes of minutes" [value]="minutes">{{ minutes }}</option>
+          <option *ngFor="let nul of nul" [value]="nul">{{ nul }}</option>
+        </select>
+      </mat-form-field>
+
+
+    </div>
+
+
+    <div class="form-field">
+      <mat-form-field>
+        <mat-label>Time</mat-label>
+        <select matNativeControl formControlName="selectedHour">
+          <option value="">Select Hour</option>
+          <option *ngFor="let hour of hours" [value]="hour">{{ hour }}</option>
+          <option value="">Select Minutes</option>
+          <option *ngFor="let minutes of minutes" [value]="minutes">{{ minutes }}</option>
+          <option *ngFor="let nul of nul" [value]="nul">{{ nul }}</option>
+        </select>
+      </mat-form-field>
+
+    </div>
+</div>-->
     <button type="submit" mat-raised-button>Create Ride</button>
   </form>
 </div>
+
+
+<div class="row-container">
+  <div class="container">
+    <label>Route A</label>
+    <input type="checkbox" id="image-checkbox1">
+    <label for="image-checkbox1">
+      <img src="assets/img_1.png" alt="Image Description">
+    </label>
+  </div>
+  <div class="container">
+    <label>Route B</label>
+    <input type="checkbox" id="image-checkbox2">
+    <label for="image-checkbox2">
+      <img src="assets/img_2.png" alt="Image Description">
+    </label>
+  </div>
+</div>
+

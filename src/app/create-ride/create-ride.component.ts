@@ -11,6 +11,7 @@ import {Ride} from "../models/ride.model";
 })
 
 export class CreateRideComponent implements OnInit{
+  selectedDiv = 'div1';
 
   public form!: FormGroup;
 
