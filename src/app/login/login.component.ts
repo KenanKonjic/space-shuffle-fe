@@ -42,7 +42,14 @@ export class LoginComponent implements OnInit {
     }
   }
 
+
   navigateToHome(): void {
     this.router.navigate(['']);
+
+  navigateToSignup(): void {
+    this.router.navigate([
+      'signup'
+    ])
+
   }
 }

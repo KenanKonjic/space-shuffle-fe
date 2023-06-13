@@ -1,4 +1,5 @@
 <body>
+
   <form (ngSubmit)="login()" [formGroup]="loginForm">
     <div class="kontent">
       <p>
@@ -41,6 +42,30 @@
             Login failed! Please try again.
           </div>
         </div>
+
+
+
+<form (ngSubmit)="login()" [formGroup]="loginForm">
+
+
+  <div class="kontent">
+
+    <p><span><b>Space</b></span><i>Shuffle</i></p>
+    <img class="logo" src="assets/SpaceShuffleLogo.png" height=340px width=340px/>
+
+    <div class="outer">
+
+      <div>
+
+          <input type="text" required name="username" id="username" formControlName="username" placeholder="Email">
+          <input type="password" required name="psw" id="psw" formControlName="psw" placeholder="Password">
+          <input class="submit" type="submit">
+          <button type="button" (click)="navigateToSignup()" class="cancelbtn">Sign up</button>
+          <br>
+
+        <span class="psw">Forgot <a href="#">password?</a></span>
+
+
       </div>
     </div>
   </form>

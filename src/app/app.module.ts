@@ -41,6 +41,7 @@ import { ToastrModule } from 'ngx-toastr';
 import { AuthService } from './auth-guard/auth.service';
 
 
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -59,6 +60,7 @@ import { AuthService } from './auth-guard/auth.service';
     ChooseRideComponent,
     ChooseRoleComponent,
     UserProfileComponent,
+    PoppupComponent
   ],
   imports: [
     BrowserModule,
