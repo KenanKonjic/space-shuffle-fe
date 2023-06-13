@@ -14,6 +14,8 @@ import { StatisticsComponent } from './admin-panel/statistics/statistics.compone
 import { UserProfileComponent } from './user-profile/user-profile.component';
 import { AuthGuard } from './auth-guard/auth.guard';
 import { AdminAuthGuard } from './auth-guard/admin-auth.guard';
+import {PoppupComponent} from "./poppup/poppup.component";
+
 
 const routes: Routes = [
   {
@@ -64,6 +66,12 @@ const routes: Routes = [
     canActivate: [AuthGuard],
   },
   { path: '**', redirectTo: '/login' },
+
+  {component:UserProfileComponent},
+
+  {   path: 'poppup',
+    component: PoppupComponent
+  }
 ];
 
 @NgModule({

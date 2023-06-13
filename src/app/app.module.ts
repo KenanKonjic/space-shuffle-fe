@@ -36,8 +36,10 @@ import { ChooseRoleComponent } from './choose-role/choose-role.component';
 import { RideService } from './services/ride.service';
 import { HttpClient, HttpClientModule } from '@angular/common/http';
 import { UserProfileComponent } from './user-profile/user-profile.component';
+import {PoppupComponent} from "./poppup/poppup.component";
 import { ToastrModule } from 'ngx-toastr';
 import { AuthService } from './auth-guard/auth.service';
+
 
 @NgModule({
   declarations: [
