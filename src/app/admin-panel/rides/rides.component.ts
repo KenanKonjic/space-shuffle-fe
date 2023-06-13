@@ -15,12 +15,15 @@ interface SideNavToggle {
 export class RidesComponent{
   rides: Ride[] = [];
   displayedColumns: string[] = ['id', 'driverName', 'startingLocation', 'endLocation', 'availableSeats', 'time', 'actions'];
-  displayedColumns2: string[] = ['id', 'driverName', 'startingLocation', 'availableSeats', 'actions'];
-  constructor(private rideService: RideService, private router: Router) { }
 
-  // ngOnInit() {
-  //   this.rides = this.rideService.getRides();
-  // }
+  constructor(private rideService: RideService, private router: Router) { }
+  ngOnInit() {
+    this.rideService.getRides().subscribe((rides)=> {
+      this.rides=rides;
+      console.log(rides);
+    });
+  }
+
 
 
 
