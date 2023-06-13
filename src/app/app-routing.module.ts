@@ -1,80 +1,73 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import {CreateRideComponent} from "./create-ride/create-ride.component";
-import {HomeComponent} from "./home/home.component";
-import {AdminPanelComponent} from "./admin-panel/admin-panel.component";
-import {ChooseRideComponent} from "./choose-ride/choose-ride.component";
-import {LoginComponent} from "./login/login.component";
-import {SignupComponent} from "./signup/signup.component";
-import {ChooseRoleComponent} from "./choose-role/choose-role.component";
-import {DashboardComponent} from "./admin-panel/dashboard/dashboard.component";
-import {RidesComponent} from "./admin-panel/rides/rides.component";
-import {UsersComponent} from "./admin-panel/users/users.component";
-import {StatisticsComponent} from "./admin-panel/statistics/statistics.component";
-import {UserProfileComponent} from "./user-profile/user-profile.component";
+import { CreateRideComponent } from './create-ride/create-ride.component';
+import { HomeComponent } from './home/home.component';
+import { AdminPanelComponent } from './admin-panel/admin-panel.component';
+import { ChooseRideComponent } from './choose-ride/choose-ride.component';
+import { LoginComponent } from './login/login.component';
+import { SignupComponent } from './signup/signup.component';
+import { ChooseRoleComponent } from './choose-role/choose-role.component';
+import { DashboardComponent } from './admin-panel/dashboard/dashboard.component';
+import { RidesComponent } from './admin-panel/rides/rides.component';
+import { UsersComponent } from './admin-panel/users/users.component';
+import { StatisticsComponent } from './admin-panel/statistics/statistics.component';
+import { UserProfileComponent } from './user-profile/user-profile.component';
+import { AuthGuard } from './auth-guard/auth.guard';
+import { AdminAuthGuard } from './auth-guard/admin-auth.guard';
 
 const routes: Routes = [
   {
-    path: 'create-ride',
-    component: CreateRideComponent
+    path: 'login',
+    component: LoginComponent,
+    // canActivate: [LoginAuthGuard],
   },
   {
-    path: '',
-    component: HomeComponent
+    path: 'signup',
+    component: SignupComponent,
   },
+  {
+    path: 'create-ride',
+    component: CreateRideComponent,
+    canActivate: [AuthGuard],
+  },
+  { path: '', component: HomeComponent, canActivate: [AuthGuard] },
   {
     path: 'admin-panel',
-    component: DashboardComponent
+    component: DashboardComponent,
+    canActivate: [AdminAuthGuard],
   },
-
   {
     path: 'choose-ride',
     component: ChooseRideComponent,
+    canActivate: [AuthGuard],
   },
-
-  {
-    path: 'login',
-    component: LoginComponent
-  },
-
-  {
-    path: 'signup',
-    component: SignupComponent
-  },
-
   {
     path: 'choose-role',
-    component: ChooseRoleComponent
+    component: ChooseRoleComponent,
+    canActivate: [AuthGuard],
   },
   {
-    path:'',
-    redirectTo:'dashboard',
-    pathMatch:'full',
+    path: 'dashboard',
+    component: DashboardComponent,
+    canActivate: [AdminAuthGuard],
+  },
+  { path: 'rides', component: RidesComponent, canActivate: [AuthGuard] },
+  { path: 'users', component: UsersComponent, canActivate: [AuthGuard] },
+  {
+    path: 'statistics',
+    component: StatisticsComponent,
+    canActivate: [AuthGuard],
   },
   {
-    path:'dashboard',
-    component:DashboardComponent
-  },
-  {
-    path:'rides',
-    component:RidesComponent
-  },
-  {
-    path:'users',
-    component:UsersComponent
-  },
-  {
-    path:'statistics',
-    component:StatisticsComponent
-  },
-   {
     path: 'user-profile',
-     component:UserProfileComponent
-   },
+    component: UserProfileComponent,
+    canActivate: [AuthGuard],
+  },
+  { path: '**', redirectTo: '/login' },
 ];
 
 @NgModule({
   imports: [RouterModule.forRoot(routes)],
-  exports: [RouterModule]
+  exports: [RouterModule],
 })
-export class AppRoutingModule { }
+export class AppRoutingModule {}

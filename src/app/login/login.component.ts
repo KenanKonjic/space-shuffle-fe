@@ -1,61 +1,48 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { HttpClient } from '@angular/common/http';
-import { AppModule } from '../app.module';
 import { LoginResponse } from './login-response.interface';
 import { Router } from '@angular/router';
+import { ToastrService } from 'ngx-toastr';
+import { AuthService } from '../auth-guard/auth.service';
 
 @Component({
   selector: 'app-login',
   templateUrl: './login.component.html',
-  styleUrls: ['./login.component.css']
+  styleUrls: ['./login.component.css'],
 })
-export class LoginComponent implements OnInit{
+export class LoginComponent implements OnInit {
   token: string | undefined;
   loginForm!: FormGroup;
+  loginSuccessfull: boolean = true;
 
+  constructor(
+    private formBuilder: FormBuilder,
 
-  constructor(private formBuilder: FormBuilder, private http: HttpClient, private router: Router) {
-  }
+    private router: Router,
+    private authService: AuthService
+  ) {}
 
   ngOnInit() {
     this.loginForm = this.formBuilder.group({
       username: ['', Validators.required],
-      psw: ['', Validators.required]
+      psw: ['', Validators.required],
     });
   }
 
-  login() {
+  login(): void {
     if (this.loginForm.valid) {
       const username = this.loginForm.get('username')?.value;
-      const psw = this.loginForm.get('psw')?.value;
-
-
-      const payload = {
-        username: username,
-        password: psw
-      };
-
-      this.http.post<LoginResponse>('https://space-shuffle.herokuapp.com/authenticate', payload)
-        .subscribe(
-          (response) => {
-            this.token = response.token;
-            localStorage.setItem('token', this.token);
-            localStorage.setItem('username', username);
-            this.router.navigate(['/choose-role']);
-          },
-          (error) => {
-            console.error('Login failed', error);
-          }
-        );
-
-
+      const password = this.loginForm.get('psw')?.value;
+      this.authService.login(username, password).then((loginSuccessfull) => {
+        if (loginSuccessfull) {
+          this.router.navigate(['/choose-role']);
+        }
+      });
     }
   }
 
   navigateToHome(): void {
-    this.router.navigate([
-      ''
-    ])
+    this.router.navigate(['']);
   }
 }
