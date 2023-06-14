@@ -1,99 +1,123 @@
 <app-header></app-header>
 <div class="body">
-<app-sidenav (onToggleSideNav)="onToggleSideNav($event)"></app-sidenav>
-<link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css"
-      integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous" />
-<div class="container">
-  <div class="dashboard">
-  <h1>Active Rides</h1>
-  <mat-table [dataSource]="rides" class="mat-elevation-z8">
+  <app-sidenav (onToggleSideNav)="onToggleSideNav($event)"></app-sidenav>
+  <link
+    rel="stylesheet"
+    href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css"
+    integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p"
+    crossorigin="anonymous"
+  />
+  <div class="container">
+    <div class="dashboard">
+      <h1>Active Rides</h1>
+      <mat-table [dataSource]="rides" class="mat-elevation-z8 mat-table">
+        <ng-container matColumnDef="id">
+          <mat-header-cell *matHeaderCellDef>Ride ID</mat-header-cell>
+          <mat-cell *matCellDef="let ride">{{ ride.id }}</mat-cell>
+        </ng-container>
 
-    <ng-container matColumnDef="id">
-      <mat-header-cell *matHeaderCellDef>Ride ID</mat-header-cell>
-      <mat-cell *matCellDef="let ride">{{ride.id}}</mat-cell>
-    </ng-container>
+        <ng-container matColumnDef="driverName">
+          <mat-header-cell *matHeaderCellDef>Driver Name</mat-header-cell>
+          <mat-cell *matCellDef="let ride">{{
+            ride.username ?? "To be assigned"
+            }}</mat-cell>
+        </ng-container>
 
-    <ng-container matColumnDef="driverName">
-      <mat-header-cell *matHeaderCellDef>Driver Name</mat-header-cell>
-      <mat-cell *matCellDef="let ride">{{ride.driverName}}</mat-cell>
-    </ng-container>
+        <ng-container matColumnDef="startingLocation">
+          <mat-header-cell *matHeaderCellDef>Starting Location</mat-header-cell>
+          <mat-cell *matCellDef="let ride">{{
+            ride.startingLocation
+            }}</mat-cell>
+        </ng-container>
 
-    <ng-container matColumnDef="startingLocation">
-      <mat-header-cell *matHeaderCellDef>Starting Location</mat-header-cell>
-      <mat-cell *matCellDef="let ride">{{ride.startingLocation}}</mat-cell>
-    </ng-container>
+        <ng-container matColumnDef="endLocation">
+          <mat-header-cell *matHeaderCellDef>End Location</mat-header-cell>
+          <mat-cell *matCellDef="let ride">{{ ride.endLocation }}</mat-cell>
+        </ng-container>
 
-    <ng-container matColumnDef="endLocation">
-      <mat-header-cell *matHeaderCellDef>End Location</mat-header-cell>
-      <mat-cell *matCellDef="let ride">{{ride.endLocation}}</mat-cell>
-    </ng-container>
+        <ng-container matColumnDef="availableSeats">
+          <mat-header-cell *matHeaderCellDef>Available Seats</mat-header-cell>
+          <mat-cell *matCellDef="let ride">{{ ride.availableSeats }}</mat-cell>
+        </ng-container>
 
-    <ng-container matColumnDef="availableSeats">
-      <mat-header-cell *matHeaderCellDef>Available Seats</mat-header-cell>
-      <mat-cell *matCellDef="let ride">{{ride.availableSeats}}</mat-cell>
-    </ng-container>
+        <ng-container matColumnDef="time">
+          <mat-header-cell *matHeaderCellDef>Time</mat-header-cell>
+          <mat-cell *matCellDef="let ride">{{ ride.time ?? "N/A" }}</mat-cell>
+        </ng-container>
 
-    <ng-container matColumnDef="time">
-      <mat-header-cell *matHeaderCellDef>Time</mat-header-cell>
-      <mat-cell *matCellDef="let ride">{{ride.time}}</mat-cell>
-    </ng-container>
+        <ng-container matColumnDef="actions">
+          <mat-header-cell *matHeaderCellDef>Actions</mat-header-cell>
+          <mat-cell *matCellDef="let ride">
+            <button
+              mat-raised-button
+              color="primary"
+              (click)="selectRide(ride)"
+            >
+              Settings
+            </button>
+            <button mat-raised-button color="warn" (click)="deleteRide(ride.id)">
+              <i class="fal fa-trash"></i> Delete
+            </button>
+          </mat-cell>
+        </ng-container>
 
-    <ng-container matColumnDef="actions">
-      <mat-header-cell *matHeaderCellDef>Actions</mat-header-cell>
-      <mat-cell *matCellDef="let ride">
-        <button mat-raised-button color="primary" (click)="selectRide(ride)">Settings</button>
-        <button mat-raised-button color="warn" (click)="selectRide(ride)"> <i class="fal fa-trash"></i>
-        </button>
-      </mat-cell>
-    </ng-container>
+        <mat-header-row
+          *matHeaderRowDef="displayedColumnsDriver"
+        ></mat-header-row>
+        <mat-row
+          *matRowDef="let row; columns: displayedColumnsDriver"
+        ></mat-row>
+      </mat-table>
+    </div>
 
-    <mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row>
-    <mat-row *matRowDef="let row; columns: displayedColumns;"></mat-row>
-  </mat-table>
+    <div class="dashboard">
+      <h1>Users</h1>
+      <mat-table [dataSource]="rides" class="mat-elevation-z8 mat-table">
+        <ng-container matColumnDef="id">
+          <mat-header-cell *matHeaderCellDef>Ride ID</mat-header-cell>
+          <mat-cell *matCellDef="let ride">{{ ride.id }}</mat-cell>
+        </ng-container>
 
+        <ng-container matColumnDef="driverName">
+          <mat-header-cell *matHeaderCellDef>Driver Name</mat-header-cell>
+          <mat-cell *matCellDef="let ride">{{
+            ride.driverName ?? "To be assigned"
+            }}</mat-cell>
+        </ng-container>
 
-</div>
+        <ng-container matColumnDef="startingLocation">
+          <mat-header-cell *matHeaderCellDef>Starting Location</mat-header-cell>
+          <mat-cell *matCellDef="let ride">{{
+            ride.startingLocation
+            }}</mat-cell>
+        </ng-container>
 
-<div class="dashboard">
-  <h1>Users</h1>
-  <mat-table [dataSource]="rides" class="mat-elevation-z8">
+        <ng-container matColumnDef="availableSeats">
+          <mat-header-cell *matHeaderCellDef>Available Seats</mat-header-cell>
+          <mat-cell *matCellDef="let ride">{{ ride.availableSeats }}</mat-cell>
+        </ng-container>
 
-    <ng-container matColumnDef="id">
-      <mat-header-cell *matHeaderCellDef>Ride ID</mat-header-cell>
-      <mat-cell *matCellDef="let ride">{{ride.id}}</mat-cell>
-    </ng-container>
+        <ng-container matColumnDef="actions">
+          <mat-header-cell *matHeaderCellDef>Actions</mat-header-cell>
+          <mat-cell *matCellDef="let ride">
+            <button
+              mat-raised-button
+              color="primary"
+              (click)="selectRide(ride)"
+            >
+              Settings
+            </button>
+            <button mat-raised-button color="warn" (click)="deleteRide(ride.id)">
+              <i class="fal fa-trash"></i> Delete
+            </button>
+          </mat-cell>
+        </ng-container>
 
-    <ng-container matColumnDef="driverName">
-      <mat-header-cell *matHeaderCellDef>Driver Name</mat-header-cell>
-      <mat-cell *matCellDef="let ride">{{ride.driverName}}</mat-cell>
-    </ng-container>
-
-    <ng-container matColumnDef="startingLocation">
-      <mat-header-cell *matHeaderCellDef>Starting Location</mat-header-cell>
-      <mat-cell *matCellDef="let ride">{{ride.startingLocation}}</mat-cell>
-    </ng-container>
-
-    <ng-container matColumnDef="availableSeats">
-      <mat-header-cell *matHeaderCellDef>Available Seats</mat-header-cell>
-      <mat-cell *matCellDef="let ride">{{ride.availableSeats}}</mat-cell>
-    </ng-container>
-
-
-    <ng-container matColumnDef="actions">
-      <mat-header-cell *matHeaderCellDef>Actions</mat-header-cell>
-      <mat-cell *matCellDef="let ride">
-        <button mat-raised-button color="primary" (click)="selectRide(ride)">Settings</button>
-        <button mat-raised-button color="warn" (click)="selectRide(ride)"> <i class="fal fa-trash"></i>
-          </button>
-      </mat-cell>
-    </ng-container>
-
-    <mat-header-row *matHeaderRowDef="displayedColumns2"></mat-header-row>
-    <mat-row *matRowDef="let row; columns: displayedColumns2;"></mat-row>
-  </mat-table>
-
-
-</div>
-
-</div>
+        <mat-header-row
+          *matHeaderRowDef="displayedColumnsUser"
+        ></mat-header-row>
+        <mat-row *matRowDef="let row; columns: displayedColumnsUser"></mat-row>
+      </mat-table>
+    </div>
+  </div>
 </div>
