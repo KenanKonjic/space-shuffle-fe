@@ -89,7 +89,7 @@ export class DashboardComponent {
   title = 'sidenav';
   isSideNavCollapsed = false;
   screenWidth = 0;
-
+  displayedColumns: any;
   onToggleSideNav(data: SideNavToggle): void {
     this.screenWidth = data.screenWidth;
     this.isSideNavCollapsed = data.collapsed;
