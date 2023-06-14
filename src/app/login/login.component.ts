@@ -4,12 +4,14 @@ import { HttpClient } from '@angular/common/http';
 import { LoginResponse } from './login-response.interface';
 import { Router } from '@angular/router';
 import { ToastrService } from 'ngx-toastr';
+import { AppModule } from '../app.module';
 import { AuthService } from '../auth-guard/auth.service';
+
 
 @Component({
   selector: 'app-login',
   templateUrl: './login.component.html',
-  styleUrls: ['./login.component.css'],
+  styleUrls: ['./login.component.css']
 })
 export class LoginComponent implements OnInit {
   token: string | undefined;
@@ -44,12 +46,9 @@ export class LoginComponent implements OnInit {
 
 
   navigateToHome(): void {
-    this.router.navigate(['']);
-
+    this.router.navigate(['logo']);
+  }
   navigateToSignup(): void {
-    this.router.navigate([
-      'signup'
-    ])
-
+    this.router.navigate(['/signup'])
   }
 }

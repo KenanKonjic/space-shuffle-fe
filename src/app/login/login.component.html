@@ -1,3 +1,4 @@
+
 <body>
 
   <form (ngSubmit)="login()" [formGroup]="loginForm">
@@ -14,12 +15,10 @@
       />
 
       <div class="outer">
-        <div>
           <input
             type="text"
             required
             name="username"
-            id="username"
             formControlName="username"
             placeholder="Email"
           />
@@ -28,7 +27,6 @@
             type="text"
             required
             name="psw"
-            id="psw"
             formControlName="psw"
             placeholder="Password"
           />
@@ -42,8 +40,8 @@
             Login failed! Please try again.
           </div>
         </div>
-
-
+    </div>
+  </form>
 
 <form (ngSubmit)="login()" [formGroup]="loginForm">
 
@@ -68,5 +66,7 @@
 
       </div>
     </div>
-  </form>
+  </div>
+</form>
+
 </body>
