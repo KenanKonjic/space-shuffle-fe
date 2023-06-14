@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Ride } from '../../models/ride.model';
 import { RideService } from '../../services/ride.service';
-import {Router} from "@angular/router";
+import { Router } from '@angular/router';
 
 interface SideNavToggle {
   screenWidth: number;
@@ -11,33 +11,43 @@ interface SideNavToggle {
 @Component({
   selector: 'app-dashboard',
   templateUrl: './dashboard.component.html',
-  styleUrls: ['./dashboard.component.css']
+  styleUrls: ['./dashboard.component.css'],
 })
-export class DashboardComponent{
+export class DashboardComponent {
   rides: Ride[] = [];
-  displayedColumns: string[] = ['id', 'driverName', 'startingLocation', 'endLocation', 'availableSeats', 'time', 'actions'];
-  displayedColumns2: string[] = ['id', 'driverName', 'startingLocation', 'availableSeats', 'actions'];
-  constructor(private rideService: RideService, private router: Router) { }
+  displayedColumnsDriver: string[] = [
+    'id',
+    'driverName',
+    'startingLocation',
+    'endLocation',
+    'availableSeats',
+    'time',
+    'actions',
+  ];
+  displayedColumnsUser: string[] = [
+    'id',
+    'driverName',
+    'startingLocation',
+    'availableSeats',
+    'actions',
+  ];
+  constructor(private rideService: RideService, private router: Router) {}
 
   ngOnInit() {
-    this.rideService.getRides().subscribe((rides)=> {
-      this.rides=rides;
-      console.log(rides);
+    this.rideService.getRides().subscribe((rides) => {
+      this.rides = rides;
     });
   }
-
-
 
   selectRide(ride: Ride) {
     this.router.navigate(['home']);
   }
 
-  title='sidenav';
+  title = 'sidenav';
   isSideNavCollapsed = false;
-  screenWidth= 0;
+  screenWidth = 0;
   onToggleSideNav(data: SideNavToggle): void {
-    this.screenWidth=data.screenWidth;
-    this.isSideNavCollapsed=data.collapsed;
+    this.screenWidth = data.screenWidth;
+    this.isSideNavCollapsed = data.collapsed;
   }
-
 }

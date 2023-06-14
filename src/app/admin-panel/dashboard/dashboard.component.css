@@ -1,15 +1,32 @@
-@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700;900&display=swap');
-@import '~@angular/cdk/overlay-prebuilt.css';
+@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700;900&display=swap");
+@import "~@angular/cdk/overlay-prebuilt.css";
 
-.body{
+.body {
   display: flex;
 }
 
-.dashboard{
+.dashboard {
   display: inline-grid;
   padding: 50px;
   z-index: -1;
-  width: 80%;
+  width: 100%;
   justify-items: stretch;
+  overflow-x: auto;
+  max-width: 100%;
+}
 
+.mat-table {
+  min-width: 800px; 
+  table-layout: fixed; 
+  white-space: nowrap; 
+}
+
+button {
+  width: 100%;
+  margin: 5px;
+  padding: 10px 5px;
+}
+
+.fa-trash{
+  padding-left: 10px;
 }

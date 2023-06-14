@@ -16,9 +16,9 @@ input[type="password"] {
   color: midnightblue;
 }
 
-body{
+body {
   justify-content: center;
-  background-image: url('../../hpi.png');
+  background-image: url("../../hpi.png");
   background-size: cover;
   background-repeat: no-repeat;
   background-position: center;
@@ -26,10 +26,10 @@ body{
   height: 100vh;
   display: flex;
   align-content: space-between;
-  margin: 0 ;
+  margin: 0;
 }
 
-form{
+form {
   top: 10vh;
   width: 600px;
   padding: 55px;
@@ -43,7 +43,7 @@ form{
   backdrop-filter: blur(13px);
 }
 
-.kontent{
+.kontent {
   opacity: 100%;
 }
 
@@ -60,7 +60,7 @@ button {
   width: 50%;
 }
 
-.cancelbtn{
+.cancelbtn {
   background-color: transparent;
   color: midnightblue;
   padding: 14px 20px;
@@ -73,7 +73,7 @@ button {
   width: 50%;
 }
 
-.cancelbtn:hover{
+.cancelbtn:hover {
   background-color: midnightblue;
   color: #f44336;
 }
@@ -89,7 +89,6 @@ button {
   border-radius: 6px;
   cursor: pointer;
   width: 50%;
-
 }
 .submit:hover {
   opacity: 0.8;
@@ -106,14 +105,13 @@ button:hover {
 
 */
 
-.logo{
+.logo {
   height: 340px;
   width: 340px;
   align-items: center;
-
 }
 
-p{
+p {
   text-align: center;
   font-family: "Myanmar Text", serif;
   font-size: 45px;
@@ -122,9 +120,12 @@ p{
   margin-top: 0px;
 }
 
-span{
+span {
   color: midnightblue;
+}
 
+.error-message {
+  color: red;
 }
 
 @media only screen and (max-width: 600px) {

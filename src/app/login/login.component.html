@@ -1,5 +1,47 @@
+
 <body>
 
+  <form (ngSubmit)="login()" [formGroup]="loginForm">
+    <div class="kontent">
+      <p>
+        <span><b>Space</b></span
+        ><i>Shuffle</i>
+      </p>
+      <img
+        class="logo"
+        src="assets/SpaceShuffleLogo.png"
+        height="340px"
+        width="340px"
+      />
+
+      <div class="outer">
+          <input
+            type="text"
+            required
+            name="username"
+            formControlName="username"
+            placeholder="Email"
+          />
+
+          <input
+            type="text"
+            required
+            name="psw"
+            formControlName="psw"
+            placeholder="Password"
+          />
+          <input class="submit" type="submit" />
+          <button type="button" (click)="navigateToHome()" class="cancelbtn">
+            Cancel
+          </button>
+          <br />
+          <span class="psw">Forgot <a href="#">password?</a></span>
+          <div *ngIf="!loginSuccessfull" class="error-message">
+            Login failed! Please try again.
+          </div>
+        </div>
+    </div>
+  </form>
 
 <form (ngSubmit)="login()" [formGroup]="loginForm">
 
@@ -21,12 +63,10 @@
 
         <span class="psw">Forgot <a href="#">password?</a></span>
 
+
       </div>
     </div>
   </div>
 </form>
 
 </body>
-
-
-
