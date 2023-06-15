@@ -34,6 +34,10 @@ import {RideService} from "./services/ride.service";
 import {HttpClient, HttpClientModule} from "@angular/common/http";
 import { UserProfileComponent } from './user-profile/user-profile.component';
 import {PoppupComponent} from "./poppup/poppup.component";
+import {DeleteRideComponent} from "./admin-panel/dashboard/delete-ride/delete-ride.component";
+import {UpdateRideComponent} from "./admin-panel/dashboard/update-ride/update-ride.component";
+import {MatDialogModule} from "@angular/material/dialog";
+import { ToastrModule } from 'ngx-toastr';
 
 @NgModule({
   declarations: [
@@ -53,7 +57,9 @@ import {PoppupComponent} from "./poppup/poppup.component";
     ChooseRideComponent,
     ChooseRoleComponent,
     UserProfileComponent,
-    PoppupComponent
+    PoppupComponent,
+    UpdateRideComponent,
+    DeleteRideComponent
   ],
   imports: [
     BrowserModule,
@@ -74,7 +80,8 @@ import {PoppupComponent} from "./poppup/poppup.component";
     NgOptimizedImage,
     HttpClientModule,
     CommonModule,
-
+    MatDialogModule,
+    ToastrModule.forRoot({preventDuplicates: true})
   ],
   providers: [UserService, RideService,  HttpClient],
   bootstrap: [AppComponent]

@@ -1,0 +1,43 @@
+<h1 mat-dialog-title class="dialog-title">Edit Ride</h1>
+<div mat-dialog-content class="dialog-actions">
+  <mat-form-field>
+    <input
+      matInput
+      placeholder="Starting Location"
+      [(ngModel)]="data.startingLocation"
+      class="wide-input"
+    />
+  </mat-form-field>
+  <mat-form-field>
+    <input
+      matInput
+      placeholder="End Location"
+      [(ngModel)]="data.endLocation"
+      class="wide-input"
+    />
+  </mat-form-field>
+  <mat-form-field>
+    <input
+      matInput
+      type="number"
+      placeholder="Available Seats"
+      [(ngModel)]="data.availableSeats"
+      class="wide-input"
+    />
+  </mat-form-field>
+  <mat-form-field>
+    <input
+      matInput
+      type="time"
+      placeholder="Time"
+      [(ngModel)]="data.time"
+      class="wide-input"
+    />
+  </mat-form-field>
+</div>
+<div mat-dialog-actions>
+  <button mat-button mat-dialog-close>Cancel</button>
+  <button mat-button color="primary" [mat-dialog-close]="data" cdkFocusInitial>
+    Save
+  </button>
+</div>
